@@ -1,0 +1,15 @@
+<head>
+	<script src="//use.typekit.net/cbt1hhk.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+</head>
+
+<template name="layout">
+	<div class="application">
+		{{> yield "header"}}
+		{{> yield}}
+
+		{{> sideNav}}
+
+		{{> errors}}
+	</div>
+</template>

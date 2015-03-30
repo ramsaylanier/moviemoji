@@ -1,0 +1,53 @@
+.btn{
+	border: 0;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	border-radius: 1px;
+}
+
+.account-btn{
+	display: block;
+	text-transform: uppercase;
+	color: white;
+	font-size: 2rem;
+	font-family: $heading;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.submit-btn{
+	width: 50%;
+	border: 3px solid black;
+	background-color: white;
+	padding: .5rem;
+	color: black;
+	font-size: 1.2rem;
+}
+
+.primary-btn{
+	font-size: 1.2rem;
+	padding: .5rem 1rem;
+}
+
+.white-btn{
+	background-color: white;
+	color: black;
+}
+
+.center-btn{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.flip-toggle{
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1rem;
+}
+
+.social-login-btn{
+
+}

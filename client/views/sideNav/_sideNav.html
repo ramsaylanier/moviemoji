@@ -1,0 +1,21 @@
+<template name="sideNav">
+	{{#donutShelf side="right" classes="app-menu"}}
+		<div class="menu-header">
+			
+		</div>
+
+		{{!-- <ul class="menu-items">
+		{{#each menuItems}}
+			<li class="menu-item menu-item__{{this.name}}">
+				<a href="{{this.url}}" class="white transition-link">{{this.name}}</a>
+				{{#if this.description}}
+				<p class="menu-description">{{this.description}}</p>
+				{{/if}}
+			</li>
+		{{/each}}
+		</ul> --}}
+		{{#if currentUser}}
+			<button class="logout-btn btn">Logout</button>
+		{{/if}}
+	{{/donutShelf}}
+</template>

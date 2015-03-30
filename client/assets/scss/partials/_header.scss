@@ -1,0 +1,34 @@
+.header{
+	transform-origin: top center;
+	position: fixed;
+	opacity: 0;
+	top: 0;
+	width: 100vw;
+	height: 60px;
+	background-color: white;
+	backface-visibility: hidden;
+	background-color: white;
+}
+
+.menu-toggle{
+
+	position: absolute;
+	right: 20px;
+	top: 23px;
+
+	.bar{
+		position: relative;
+		width: 25px;
+		background-color: black;
+		height: 2px;
+		margin-bottom: 4px;
+		border-radius: 1px;
+		transition: background 600ms ease-out;
+	}
+
+	&.active{
+		.bar{
+			background-color: black;
+		}
+	}
+}

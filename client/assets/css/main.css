@@ -1,0 +1,554 @@
+@charset "UTF-8";
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*!
+Typeplate : Starter Kit
+URL ........... http://typeplate.com
+Version ....... 2.1.0
+Github ........ https://github.com/typeplate/starter-kit
+Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+License ....... Creative Commmons Attribution 3.0
+License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+*/
+@font-face {
+  font-family: 'Ampersand';
+  src: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+  unicode-range: U26; }
+
+@font-face {
+  font-family: 'Ampersand';
+  src: local('Georgia');
+  unicode-range: U270C; }
+
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
+  color: #222; }
+
+blockquote + figcaption cite {
+  display: block;
+  font-size: inherit;
+  text-align: right; }
+
+body {
+  word-wrap: break-word; }
+
+pre code {
+  word-wrap: normal; }
+
+html {
+  font: normal 112.5%/1.65 serif; }
+
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: #444; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "nimbus-sans-condensed", sans-serif; }
+
+.typl8-tera {
+  font-size: 117px;
+  font-size: 6.5rem;
+  margin-bottom: 70.90909px;
+  margin-bottom: 3.93939rem; }
+
+.typl8-giga {
+  font-size: 90px;
+  font-size: 5rem;
+  margin-bottom: 54.54545px;
+  margin-bottom: 3.0303rem; }
+
+.typl8-mega, h1 {
+  font-size: 72px;
+  font-size: 4rem;
+  margin-bottom: 43.63636px;
+  margin-bottom: 2.42424rem; }
+
+.typl8-alpha, h2 {
+  font-size: 60px;
+  font-size: 3.33333rem;
+  margin-bottom: 36.36364px;
+  margin-bottom: 2.0202rem; }
+
+.typl8-beta, h3 {
+  font-size: 48px;
+  font-size: 2.66667rem;
+  margin-bottom: 29.09091px;
+  margin-bottom: 1.61616rem; }
+
+.typl8-gamma, h4 {
+  font-size: 36px;
+  font-size: 2rem;
+  margin-bottom: 21.81818px;
+  margin-bottom: 1.21212rem; }
+
+.typl8-delta, h5 {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  margin-bottom: 14.54545px;
+  margin-bottom: 0.80808rem; }
+
+.typl8-epsilon {
+  font-size: 21px;
+  font-size: 1.16667rem;
+  margin-bottom: 12.72727px;
+  margin-bottom: 0.70707rem; }
+
+.typl8-zeta, h6 {
+  font-size: 18px;
+  font-size: 1rem;
+  margin-bottom: 10.90909px;
+  margin-bottom: 0.60606rem; }
+
+p {
+  margin: auto auto 1.5em; }
+
+small {
+  font-size: 65%; }
+
+input, abbr, acronym, blockquote, code, kbd, q, samp, var {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
+pre {
+  white-space: pre; }
+  pre code {
+    white-space: -moz- pre-wrap;
+    white-space: pre-wrap; }
+
+code {
+  white-space: pre;
+  font-family: monospace; }
+
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray; }
+  abbr[title]:hover {
+    cursor: help; }
+
+.typl8-drop-cap:first-letter {
+  float: left;
+  margin: 10px 10px 0 0;
+  padding: 0 20px;
+  font-size: 4em;
+  font-family: inherit;
+  line-height: 1;
+  text-indent: 0;
+  background: transparent;
+  color: inherit; }
+
+p + .typl8-drop-cap {
+  text-indent: 0;
+  margin-top: 0; }
+
+/**
+ * Lining Definition Style Markup
+ *
+  <dl class="typl8-lining">
+    <dt><b></b></dt>
+    <dd></dd>
+  </dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.typl8-lining dt, .typl8-lining dd {
+  display: inline;
+  margin: 0; }
+.typl8-lining dt + dt:before, .typl8-lining dd + dt:before {
+  content: "\A";
+  white-space: pre; }
+.typl8-lining dd + dd:before {
+  content: ", "; }
+.typl8-lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem; }
+
+/**
+ * Dictionary Definition Style Markup
+ *
+  <dl class="typl8-dictionary-style">
+    <dt><b></b></dt>
+    <dd></dd>
+  </dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.typl8-dictionary-style dt {
+  display: inline;
+  counter-reset: definitions; }
+  .typl8-dictionary-style dt + dt:before {
+    content: ", ";
+    margin-left: -0.2rem; }
+.typl8-dictionary-style dd {
+  display: block;
+  counter-increment: definitions; }
+  .typl8-dictionary-style dd:before {
+    content: counter(definitions, decimal) ". "; }
+
+/**
+ * Blockquote Markup
+ *
+    <figure>
+      <blockquote cite="">
+        <p></p>
+      </blockquote>
+      <figcaption>
+        <cite>
+          <small><a href=""></a></small>
+        </cite>
+      </figcaption>
+    </figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Pull Quotes Markup
+ *
+  <aside class="typl8-pull-quote">
+    <blockquote>
+      <p></p>
+    </blockquote>
+  </aside>
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+.typl8-pull-quote {
+  position: relative;
+  padding: 1em; }
+  .typl8-pull-quote:before, .typl8-pull-quote:after {
+    height: 1em;
+    opacity: 0.5;
+    position: absolute;
+    font-size: 4em;
+    color: #dc976e; }
+  .typl8-pull-quote:before {
+    content: '“';
+    top: 0;
+    left: 0; }
+  .typl8-pull-quote:after {
+    content: '”';
+    bottom: 0;
+    right: 0; }
+
+/**
+ * Figures Markup
+ *
+  <figure>
+    <figcaption>
+      <strong>Fig. X.X | </strong><cite title=""></cite>
+    </figcaption>
+  </figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
+ *
+  <article>
+    <p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+    <footer>
+      <ol class="foot-notes">
+        <li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
+      </ol>
+    </footer>
+  </article>
+ *
+ * Extend this object into your markup.
+ *
+ */
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "ff-tisa-sans-web-pro", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+.application {
+  -webkit-perspective: 2000;
+          perspective: 2000; }
+
+.wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.login-item {
+  position: absolute;
+  top: 120vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
+.login-section {
+  width: 200px;
+  height: 200px; }
+  .login-section .front {
+    background-color: black; }
+    .login-section .front a {
+      padding: 30px; }
+  .login-section .back {
+    background-color: white; }
+  .login-section .card-content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+
+.card {
+  position: relative;
+  overflow: hidden;
+  -webkit-perspective: 2000;
+          perspective: 2000; }
+  .card .card-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d; }
+    .card .card-flipper.blown-up .front .card-content {
+      opacity: 0; }
+  .card .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+    .card .card-side.front {
+      z-index: 2;
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg); }
+    .card .card-side.back {
+      z-index: 1;
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+
+.lobby-page {
+  background-color: white; }
+
+.fold-out-container {
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  background-color: #e6e6e6;
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-transition: all 300ms ease-out;
+          transition: all 300ms ease-out;
+  position: relative;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  margin-top: 250px; }
+  .fold-out-container .fold-out-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    -webkit-transition: all 300ms ease-out 0ms;
+            transition: all 300ms ease-out 0ms;
+    -webkit-transform-origin: top center;
+        -ms-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+  .fold-out-container.active {
+    margin-top: 50px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    padding: 100px 0px;
+    max-height: 200px; }
+    .fold-out-container.active:before, .fold-out-container.active:after {
+      background-color: transparent;
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg); }
+    .fold-out-container.active .fold-out-content {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg); }
+
+.page.with-header {
+  padding-top: 90px; }
+
+.lobby-page {
+  background-color: black;
+  opacity: 1; }
+
+.header {
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: white;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-color: white; }
+
+.menu-toggle {
+  position: absolute;
+  right: 20px;
+  top: 23px; }
+  .menu-toggle .bar {
+    position: relative;
+    width: 25px;
+    background-color: black;
+    height: 2px;
+    margin-bottom: 4px;
+    border-radius: 1px;
+    -webkit-transition: background 600ms ease-out;
+            transition: background 600ms ease-out; }
+  .menu-toggle.active .bar {
+    background-color: black; }
+
+.btn {
+  border: 0;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 1px; }
+
+.account-btn {
+  display: block;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2rem;
+  font-family: "nimbus-sans-condensed", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px; }
+
+.submit-btn {
+  width: 50%;
+  border: 3px solid black;
+  background-color: white;
+  padding: .5rem;
+  color: black;
+  font-size: 1.2rem; }
+
+.primary-btn {
+  font-size: 1.2rem;
+  padding: .5rem 1rem; }
+
+.white-btn {
+  background-color: white;
+  color: black; }
+
+.center-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.flip-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem; }
+
+form.padded {
+  padding: .5rem; }
+form.tight {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+
+label {
+  display: block;
+  text-align: left;
+  font-size: .8rem; }
+
+.form-title {
+  margin: 1rem 0 0 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+.form-control {
+  padding: .25rem;
+  position: relative;
+  width: 100%; }
+
+.field {
+  border: 0px;
+  background-color: black;
+  font-size: .9rem;
+  line-height: 1.3rem;
+  color: white;
+  padding: .5rem .5rem .25rem .5rem;
+  width: 100%;
+  font-family: "ff-tisa-sans-web-pro", sans-serif; }
+  .field::-webkit-input-placeholder {
+    color: white; }
+  .field::-moz-placeholder {
+    color: white; }
+  .field:-ms-input-placeholder {
+    color: white; }
+  .field::placeholder {
+    color: white; }
+  .field:focus {
+    outline: none; }
+
+.errors {
+  z-index: 999; }
+
+.header {
+  z-index: 900; }
+
+.page {
+  z-index: 100; }

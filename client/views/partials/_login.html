@@ -1,0 +1,26 @@
+<template name="login">
+	{{#donutItem itemOptions}}
+		<div class="login login-section card">
+			<div class="card-flipper">
+				<div class="front card-side">
+					<div class="card-content">
+						<a href="#" class="login-btn account-btn flip-btn btn">Login</a>
+						<a href="#" class="register-btn account-btn flip-btn btn">Sign Up</a>
+					</div>
+				</div>
+
+				<div class="back card-side">
+					<div class="card-content">
+						<button class="flip-toggle flip-btn btn">&#10006;</button>
+						{{#if login}}
+							{{> loginForm}}
+						{{else}}
+							{{>registerForm}}
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{{/donutItem}}
+</template>

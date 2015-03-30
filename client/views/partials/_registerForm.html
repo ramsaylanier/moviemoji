@@ -1,0 +1,29 @@
+<template name="registerForm">
+	<h3 class="form-title">Sign Up</h3>
+	<form name="register-form" class="register-form padded">
+		<div class="form-control">
+			<input type="text" name="username" placeholder="Username" class="field">
+		</div>
+
+		<div class="form-control">
+			<input type="email" name="email" placeholder="Email" class="field">
+		</div>
+
+		<div class="form-control">
+			<label>Password</label>
+			<input type="password" name="password" class="field">
+		</div>
+
+		<div class="form-control">
+			<label>Confirm Password</label>
+			<input type="password" name="confirm-password" class="field">
+		</div>
+
+		<div class="form-control">
+			<input type="submit" class="submit-btn btn" value="Sign Up">
+		</div>
+	</form>
+
+	<button class="twitter-login-btn social-login-btn btn">Twitter</button>
+	<button class="facebook-login-btn social-login-btn btn">Facebook</button>
+</template>
