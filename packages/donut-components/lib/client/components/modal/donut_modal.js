@@ -11,6 +11,7 @@ Template.donutModal.onCreated(function(){
 	}
 
 	Session.set("modalOptions", options);
+	Session.set("modalState", 'active');
 });
 
 Template.donutModal.onRendered(function(){
@@ -18,6 +19,10 @@ Template.donutModal.onRendered(function(){
 	options = Session.get('modalOptions');
 	animationType = options.animateIn || 'zoomIn';
 	donutAnimation.findAnimation(options, animationType, modal);
+})
+
+Template.donutModal.onDestroyed(function(){
+	Session.set("modalState", 'notActive');
 })
 
 Template.donutModal.events({

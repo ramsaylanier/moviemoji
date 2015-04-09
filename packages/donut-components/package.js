@@ -48,7 +48,6 @@ Package.onUse(function (api) {
     'lib/client/components/page/donut_page.js',
     'lib/client/components/list/donut_list.html',
     'lib/client/components/list/donut_list.js',
-    'lib/client/components/list/listAnimations.js', 
     'lib/client/components/item/donut_item.html',
     'lib/client/components/item/donut_item.js',    
     'lib/client/components/shelf/donut_shelf.html',
@@ -61,6 +60,7 @@ Package.onUse(function (api) {
 
     //stylesheets
     'lib/client/stylesheets/_vars.scss',
+    'lib/client/stylesheets/_toggles.scss',
     'lib/client/stylesheets/_page.scss',
     'lib/client/stylesheets/_shelf.scss',
     'lib/client/stylesheets/_cards.scss',

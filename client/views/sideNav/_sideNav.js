@@ -18,6 +18,7 @@ Template.sideNav.events({
 
 		Meteor.setTimeout(function(){
 			Meteor.logout();
+			Router.go('/');
 		}, 1000);
 
 	}

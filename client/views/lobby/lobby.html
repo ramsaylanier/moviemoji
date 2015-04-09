@@ -1,7 +1,11 @@
 <template name="lobby">
 	{{#page pageOptions}}
-		{{#donutItem itemOptions}}
-			<button class="create-move-btn white-btn primary-btn center-btn btn modal-trigger" data-modal="newMovieForm">Create New Movie</button>
-		{{/donutItem}}
+		<div class="wrapper">
+			{{#donutList listOptions}}
+				{{#donutItem movieItemOptions}}
+					<a class="transition-link movie-title" href="/movies/{{this._id}}">{{this.title}}</a>
+				{{/donutItem}}
+			{{/donutList}}
+		</div>
 	{{/page}}
 </template>

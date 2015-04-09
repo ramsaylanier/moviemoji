@@ -1,0 +1,12 @@
+.primary-nav{
+	position: absolute;
+	height: 100%;
+	right: 0;
+
+	.nav-list{
+		li{
+			position: relative;
+			display: inline-block;
+		}
+	}
+}

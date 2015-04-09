@@ -1,11 +1,58 @@
 .page{
+	padding-top: 90px;
 	&.with-header{
-		padding-top: 90px;
+		padding-top: 60px;
 	}
 }
-
 
 .lobby-page{
 	background-color: black;
 	opacity: 1;
+}
+
+.movie-page{
+	.page-content{
+		.wrapper{
+			max-width: 50%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.page-header{
+	height: 50vh;
+	padding: 1rem;
+	background-size: cover;
+	background-position: center center;
+	background-color: black;
+}
+
+.page-title{
+	text-align: center;
+	margin-top: 1rem;
+	span{
+		background-color: fade-out(black, .3);
+		padding: 1rem;
+		color: white;
+		transition: all 300ms ease-out;
+		outline: 10px solid transparent;
+	}
+
+	&.contentEditable{
+		span{
+			background-color: white;
+			color: black;
+			outline-color: $pink;
+		}
+	}
+}
+
+.page-content{
+	padding: 2rem 0rem;
+}
+
+.output{
+	padding: 1rem;
+	background-color: white;
 }

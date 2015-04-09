@@ -71,12 +71,9 @@ donutAnimation = {
 	animate: function(element, transition, options){
 
 		var options = options || {};
-
 		var delay = options.delay || 0;
 		var duration = options.duration || 500;
 		var easing = options.easing || 'easeOut';
-
-		console.log(typeof(transition));
 
 		if (typeof(transition) == 'string'){
 			transition = donutTransition[transition](element);
@@ -111,6 +108,9 @@ donutTransition = {
 		}, 0);
 
 		return {"translateY": 0};
+	},
+	slideInFromBottom_Short: function(element){
+		return {"translateY": [0, "20px"], opacity: [1, 0]};
 	},
 
 	slideOutToLeft: function(){

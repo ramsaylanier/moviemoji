@@ -112,11 +112,15 @@ var blowUp = function(element, content){
 		left: 0,
 		width: "100vw",
 		height: "100vh",
+		translateX: 0,
+		translateY: 0
 	}, 500, [.8, .6, .8, 1]);
 
-	content.velocity({
-		rotateY: "0deg"
-	}, 500, [.8, .6, .8, 1]);
+	if (content != null){
+		content.velocity({
+			rotateY: "0deg"
+		}, 500, [.8, .6, .8, 1]);
+	}
 }
 
 donutTransition['fadeIn'] = fadeIn;

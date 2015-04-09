@@ -1,10 +1,47 @@
+Template.lobby.onCreated(function(){
+	var instance = this;
+	
+	instance.ready = new ReactiveVar(false);
+	var subscription = instance.subscribe('publicMovies');
+
+	instance.autorun( function(){
+		if (subscription.ready()){
+			instance.ready.set(true);
+		}
+	})
+
+	instance.movies = function(){
+		return Movies.find();
+	}
+})
+
 Template.lobby.helpers({
+	movies: function(){
+		return Template.instance().movies();
+	},
 	pageOptions: function(){
 		var options = {
 			animateIn: 'none',
-			classes: 'lobby-page with-header',
+			animateOut: 'fadeOut',
+			classes: 'lobby-page',
 			pageTitle: 'Lobby'
 		}
+
+		return options;
+	},
+	listOptions: function(){
+		var options = {
+			animateItems: true,
+			waitForReady: true,
+			animateIn: 'none',
+			animateOut: 'none',
+			itemAnimateIn: 'slideInFromBottom_Short',
+			duration: 2000,
+			easing: [600, 15],
+			classes: 'movie-list',
+			context: Template.instance().movies(),
+			dataReady: Template.instance().ready.get()
+		};
 
 		return options;
 	},
@@ -19,11 +56,14 @@ Template.lobby.helpers({
 		}
 
 		return options;
-	}
-})
+	},
+	movieItemOptions: function(){
+		var options = {
+			animateIn: 'none',
+			animateOut: 'none',
+			classes: 'movie-item hidden-item'
+		}
 
-Template.lobby.events({
-	'click .create-move-btn':function(){
-		$('.fold-out-container').toggleClass('active');
+		return options;
 	}
 })

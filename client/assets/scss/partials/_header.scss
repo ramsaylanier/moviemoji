@@ -10,11 +10,11 @@
 	background-color: white;
 }
 
-.menu-toggle{
+.donut-toggle{
 
-	position: absolute;
-	right: 20px;
-	top: 23px;
+	&.top{
+		top: 23px;
+	}
 
 	.bar{
 		position: relative;
@@ -30,5 +30,30 @@
 		.bar{
 			background-color: black;
 		}
+	}
+}
+
+.back-toggle{
+
+	.bar-1, .bar-3{
+		width: 10px;
+	}
+
+	.bar-1{
+		top: 3px;
+		transform: rotate(-30deg);	
+	}
+
+	.bar-3{
+		top: -3px;
+		transform: rotate(30deg);	
+	}
+}
+
+.menu-toggle{
+
+	&.left-toggle{
+		left: 20px;
+
 	}
 }

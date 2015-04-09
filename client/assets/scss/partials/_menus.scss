@@ -1,0 +1,22 @@
+.dropdown-menu{
+	border: 0;
+	li{
+		border: 0;
+		padding: .25rem;
+		display: flex;
+		align-items: center;
+		height: 30px;
+		border-bottom: 1px solid darken(white, 10%);
+
+		a{
+			display: block;
+			height: 100%;
+			font-family: $copy;
+
+			img{
+				height: 100%;
+				margin: 0;
+			}
+		}
+	}
+}

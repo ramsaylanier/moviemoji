@@ -1,6 +1,5 @@
 donutStates = {
 	toggleShelfState:function(toggle, shelf){
-
 		if (!toggle){
 			var toggle = $('.donut-toggle');
 		}
@@ -37,6 +36,7 @@ donutStates = {
 		});
 	},
 	checkModalState:function(){
+		console.log('checkModalState');
 		var modalState = Session.get('modalState');
 
 		if (modalState == 'active' && $('.modal').length){
@@ -45,26 +45,32 @@ donutStates = {
 	},
 	switchModalState:function(){
 		var modalState = Session.get('modalState');
+		var modalOptions = Session.get('modalOptions');
+		var modal = $('.modal');
 
 		if (modalState == 'active'){
 			Session.set('modalState', 'notActive');
-			//from globaljs
-			// modalZoomOut();
-			// pageZoomIn();
+			donutAnimation.animate(modal, modalOptions.animateOut, modalOptions);
+
+			Meteor.setTimeout(function(){
+				modal.remove();
+			}, modalOptions.duration + modalOptions.delay);
+			
 		} else {
 			Session.set('modalState', 'active');
-			//from globaljs
-			// modalZoomIn();
-			// pageZoomOut();
+			donutAnimation.animate(modal, modalOptions.animateIn, modalOptions);
 		}
 	},
 	goBack: function(){
-		var previousPageURL = Session.get('previousPageURL');
 		var currentPage = $('.page');
 		var currentPageOptions = Session.get('pageOptions');
 		var animationType = currentPageOptions.animateOut;
 
-		donutAnimation.findAnimation(currentPageOptions, animationType, currentPage, previousPageURL);
+		donutAnimation.findAnimation(currentPageOptions, animationType, currentPage);
+
+		Meteor.setTimeout(function(){
+			history.back();
+		}, currentPageOptions.duration);
 	}
 }
 

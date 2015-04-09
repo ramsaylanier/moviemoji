@@ -24,12 +24,6 @@ Template.page.onRendered(function(){
 	donutAnimation.findAnimation(options, animationType, page);
 });
 
-Template.page.onDestroyed(function(){
-	//set previousPageURL to current page for back button purposes
-	console.log(window.location);
-	Session.set('previousPageURL', window.location.pathname);
-});
-
 Template.page.events({
 	'click .transition-link': function(e, template){
 		e.preventDefault();
@@ -43,13 +37,5 @@ Template.page.events({
 
 		animationType = data.animateOut || 'slideOutToLeft';
 		donutAnimation.findAnimation(options, animationType, page, url);
-	},
-	'click .modal-trigger': function(e){
-		e.preventDefault();
-
-		var modal = $(e.currentTarget).data('modal');
-		var modalTemplate = Template[modal];
-
-		Blaze.render(modalTemplate, $('.page').get(0));
 	}
 })

@@ -36,6 +36,7 @@ Package.onUse(function (api) {
     'client/compatibility/animations.js',
 
     //stylesheets
+    'client/stylesheets/_vars.scss',
     'client/stylesheets/_items.scss',
     'client/stylesheets/_shelf.scss',
     'client/stylesheets/_pages.scss',

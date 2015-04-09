@@ -5,9 +5,13 @@ Template.donutToggle.events({
 		toggle = $(e.currentTarget);
 		$('.donut-toggle').removeClass('active');
 
-		var state = this.state;
+		var state = this.state || null;
 		var target = $(this.target) || null;
 		
-		donutStates[state](toggle, target);
+		if (state){
+			donutStates[state](toggle, target);
+		} else{
+			return false;
+		}
 	}
 })

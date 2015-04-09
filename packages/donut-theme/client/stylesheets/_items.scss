@@ -2,3 +2,20 @@
 	opacity: 0;
 }
 
+.movie-list{
+	margin-top: 2rem;
+}
+
+.movie-item{
+	background-color: white;
+	padding: 1rem;
+	margin-bottom: 5px;
+}
+
+.movie-title{
+	font-family: $heading;
+	font-size: 1.6rem;
+	font-weight: 100;
+
+	color: black;
+}

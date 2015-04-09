@@ -16,3 +16,6 @@ service-configuration
 donut-theme
 ramsay:errors
 accounts-password
+reactive-var
+mquandalle:jquery-textcomplete
+http

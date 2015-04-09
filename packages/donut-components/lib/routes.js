@@ -1,5 +1,5 @@
 Router.onBeforeAction(function(){	
-	donutStates.checkModalState();
+	// donutStates.checkModalState();
 	donutStates.closeShelfState();
 	this.next();
 });

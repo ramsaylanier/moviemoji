@@ -1,0 +1,17 @@
+<template name="movieSynopsisForm">
+	<form class="synopsis-form">
+		<div class="form-control">
+			<label>Enter emoji synopsis - <a href="#">how does this work?</a></label>
+			<textarea name="synopsis-field" class="synopsis-field field">{{{synopsis}}}</textarea>
+		</div>
+
+		<div class="form-control">
+			<label>Animated Gif or Image</label>
+			<input type='text' name="gif-field" class="gif-field field" value={{movieImage}}>
+		</div>
+
+		<div class="form-control">
+			<input type="submit" class="submit-btn btn" value="Publish"/>
+		</div>
+	</form>
+</template>

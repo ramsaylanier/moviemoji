@@ -25,7 +25,17 @@ Template.newMovieForm.events({
 					if (error){
 						Errors.throw(error.reason, 'error')
 					} else {
-						Router.go('/movies/' + result);
+						var modalOptions = Session.get('modalOptions');
+						donutStates.switchModalState();
+
+						Meteor.setTimeout(function(){
+							var page = $('.page');
+							var url = '/movies/' + result; 
+							var pageOptions = Session.get('pageOptions');
+							var animationType = pageOptions.animateOut;
+							donutAnimation.findAnimation(pageOptions, animationType, page, url);
+							Session.set('editMode', true);
+						}, 0);
 					}
 				})
 			}
