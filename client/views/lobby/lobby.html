@@ -1,13 +1,9 @@
 <template name="lobby">
 	{{#page pageOptions}}
 		<div class="wrapper">
-			{{#if Template.subscriptionsReady}}
-				{{#donutList listOptions}}
-					{{#donutItem movieItemOptions}}
-						{{>movieItem}}
-					{{/donutItem}}
-				{{/donutList}}
-			{{/if}}
+			<button class="btn center-btn primary-btn pink-btn modal-trigger" data-modal="newMovieForm">Create New Moviemoji</button>
+			{{> userMoviemojiList publicMovies}}
+			<button class="show-more-btn hidde-item"></button>
 		</div>
 	{{/page}}
 </template>

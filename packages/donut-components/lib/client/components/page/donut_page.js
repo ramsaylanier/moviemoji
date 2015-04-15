@@ -37,5 +37,11 @@ Template.page.events({
 
 		animationType = data.animateOut || 'slideOutToLeft';
 		donutAnimation.findAnimation(options, animationType, page, url);
+	},
+	'click .modal-trigger': function(e){
+		e.preventDefault();
+		var modal = $(e.currentTarget).data('modal');
+		var modalTemplate = Template[modal];
+		Blaze.render(modalTemplate, $('.page').get(0));
 	}
 })

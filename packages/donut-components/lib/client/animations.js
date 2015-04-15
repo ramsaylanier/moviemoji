@@ -101,7 +101,6 @@ donutTransition = {
 	slideInFromTop_Short: function(element){
 		return {"translateY": [0, "-20px"], opacity: [1, 0]};
 	},
-
 	slideInFromBottom: function(element){
 		element.velocity({
 			"translateY": "100vh", 
@@ -112,7 +111,9 @@ donutTransition = {
 	slideInFromBottom_Short: function(element){
 		return {"translateY": [0, "20px"], opacity: [1, 0]};
 	},
-
+	slideOutToBottom_Short: function(element){
+		return {"translateY": ["20px", 0], opacity: [0, 1]};
+	},
 	slideOutToLeft: function(){
 		return {"translateX": "-100vw"};
 	},

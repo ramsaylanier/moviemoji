@@ -19,10 +19,13 @@
 
 .close-modal-btn{
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 0px;
+	right: 0px;
 	border: 0;
-	background-color: black;
-	color: white;
+	background-color: transparent;
+	transform: rotate(45deg);
+	color: black;
+	font-size: 1.5rem;
 	cursor: pointer;
+	border-radius: 50%;
 }

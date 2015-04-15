@@ -309,10 +309,6 @@ body {
 a {
   text-decoration: none; }
 
-.application {
-  -webkit-perspective: 2000;
-          perspective: 2000; }
-
 .wrapper {
   max-width: 1000px;
   width: 100%;
@@ -482,9 +478,8 @@ a {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
-
-.emojione {
-  margin-bottom: 8px; }
+  .output .emojione {
+    margin-bottom: 8px; }
 
 .header {
   -webkit-transform-origin: top center;
@@ -555,7 +550,8 @@ a {
   background-color: black;
   color: white;
   cursor: pointer;
-  border-radius: 1px; }
+  border-radius: 1px;
+  font-family: "nimbus-sans-condensed", sans-serif; }
 
 .account-btn {
   display: block;
@@ -569,13 +565,16 @@ a {
 .submit-btn {
   border: 3px solid black;
   background-color: white;
-  padding: .5rem;
-  color: black;
-  font-size: 1.2rem; }
+  color: black; }
 
-.primary-btn {
+.primary-btn, .submit-btn {
   font-size: 1.2rem;
   padding: .5rem 1rem; }
+
+.pink-btn {
+  border: 3px solid #f42045;
+  background-color: #f42045;
+  color: white; }
 
 .white-btn {
   background-color: white;
@@ -597,10 +596,29 @@ a {
   display: block; }
 
 .refresh-gif-btn {
+  background-color: #f42045;
+  float: right; }
+
+.favorite-btn {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: #f42045; }
+  background-color: transparent;
+  height: 100%;
+  width: 50px;
+  padding-right: 0px 15px 0px 5px;
+  border-radius: 0; }
+  .favorite-btn .star-icon {
+    width: 30px; }
+  .favorite-btn:focus {
+    outline: none;
+    outline: 3px solid #f42045; }
+  .favorite-btn polygon {
+    -webkit-transition: all 300ms ease-out;
+            transition: all 300ms ease-out;
+    fill: grey; }
+  .favorite-btn:hover polygon {
+    fill: rgba(244, 32, 69, 0.5); }
+  .favorite-btn.favorited polygon {
+    fill: #f42045; }
 
 form.padded {
   padding: .5rem; }

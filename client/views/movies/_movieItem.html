@@ -1,6 +1,11 @@
 <template name="movieItem">
 	<div class="card-flipper">
 		<div class="front card-side">
+			{{#if currentUser}}
+				{{#if notDashboard}}
+					<button class="btn favorite-btn {{favorited}}">{{>starIcon}}</button>
+				{{/if}}
+			{{/if}}
 			<div class="card-content">
 				<span class="movie-title" href="/movies/{{this._id}}">{{this.title}} | <span class="movie-synopsis">{{{synopsis}}}</span></span>
 				<span class="movie-date">{{createdOn}}</span>

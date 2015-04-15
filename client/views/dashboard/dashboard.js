@@ -2,16 +2,38 @@ Template.dashboard.onCreated(function(){
 	var instance = this;
 	
 	instance.ready = new ReactiveVar(false);
-	var subscription = instance.subscribe('userMovies');
+	instance.loaded = new ReactiveVar(0);
+
+	Session.set('limit', 10);
+
+	instance.favorites = new ReactiveVar();
+	instance.userMovies = new ReactiveVar();
+
+	var limit = Session.get('limit');
+	var subscription = instance.subscribe('userMovies', Meteor.userId(), limit);
+	var favoritesSubscription = instance.subscribe('favoriteMovies');
 
 	instance.autorun( function(){
+		limit = Session.get('limit');
+		subscription = instance.subscribe('userMovies', Meteor.userId());
+
 		if (subscription.ready()){
 			instance.ready.set(true);
-		}
+			instance.favorites.set(Movies.find({favorites: Meteor.userId()}));
+			instance.userMovies.set(Movies.find({author: Meteor.userId()}));
+		} else {
+			instance.ready.set(false);
+	    }
 	})
 })
 
 Template.dashboard.helpers({
+	favorites: function(){
+		return Template.instance().favorites.get();
+	},
+	userMovies: function(){
+		return Template.instance().userMovies.get();
+	},
 	pageOptions: function(){
 		var options = {
 			animateIn: 'fadeIn',
@@ -22,7 +44,7 @@ Template.dashboard.helpers({
 
 		return options;
 	},
-	listOptions: function(){
+	favoriteListOptions: function(){
 		var options = {
 			animateItems: true,
 			waitForReady: true,
@@ -31,12 +53,10 @@ Template.dashboard.helpers({
 			itemAnimateIn: 'slideInFromBottom_Short',
 			duration: 2000,
 			easing: [600, 15],
-			classes: 'movie-list',
-			context: this,
+			classes: 'movie-list favorite-list',
+			context: Template.instance().favorites.get(),
 			dataReady: Template.instance().ready.get()
 		};
-
-		console.log(options);
 		return options;
 	},
 	itemOptions: function(){

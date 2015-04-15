@@ -1,13 +1,8 @@
 <template name="dashboard">
 	{{#page pageOptions}}
 		<div class="wrapper">
-			{{#if Template.subscriptionsReady}}
-				{{#donutList listOptions}}
-					{{#donutItem movieItemOptions}}
-						{{> movieItem}}
-					{{/donutItem}}
-				{{/donutList}}
-			{{/if}}
+			{{> userMoviemojiList userMovies}}
+			{{> userMoviemojiList favorites}}
 		</div>
 	{{/page}}
 </template>
