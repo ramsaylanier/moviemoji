@@ -4,18 +4,22 @@
 			
 		</div>
 
-		{{!-- <ul class="menu-items">
-		{{#each menuItems}}
-			<li class="menu-item menu-item__{{this.name}}">
-				<a href="{{this.url}}" class="white transition-link">{{this.name}}</a>
-				{{#if this.description}}
-				<p class="menu-description">{{this.description}}</p>
-				{{/if}}
-			</li>
-		{{/each}}
-		</ul> --}}
-		{{#if currentUser}}
-			<button class="logout-btn btn">Logout</button>
-		{{/if}}
+		<ul class="menu-items">
+			{{#if currentUser}}
+				<li class="menu-item menu-item__logout">
+					<a href="#" class="white logout-link">Logout</a>
+				</li>
+			{{/if}}
+			{{#each menuItems}}
+				<li class="menu-item menu-item__{{this.name}}">
+					<a href="{{this.url}}" class="white transition-link">{{this.name}}</a>
+					{{#if this.description}}
+					<p class="menu-description">{{this.description}}</p>
+					{{/if}}
+				</li>
+			{{/each}}
+		</ul>
+
+
 	{{/donutShelf}}
 </template>

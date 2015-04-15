@@ -1,8 +1,8 @@
-Template.lobby.onCreated(function(){
+Template.dashboard.onCreated(function(){
 	var instance = this;
 	
 	instance.ready = new ReactiveVar(false);
-	var subscription = instance.subscribe('publicMovies');
+	var subscription = instance.subscribe('userMovies');
 
 	instance.autorun( function(){
 		if (subscription.ready()){
@@ -11,13 +11,13 @@ Template.lobby.onCreated(function(){
 	})
 })
 
-Template.lobby.helpers({
+Template.dashboard.helpers({
 	pageOptions: function(){
 		var options = {
-			animateIn: 'none',
+			animateIn: 'fadeIn',
 			animateOut: 'fadeOut',
-			classes: 'lobby-page',
-			pageTitle: 'Lobby'
+			classes: 'dashboard-page',
+			pageTitle: 'Dashboard'
 		}
 
 		return options;
@@ -36,6 +36,7 @@ Template.lobby.helpers({
 			dataReady: Template.instance().ready.get()
 		};
 
+		console.log(options);
 		return options;
 	},
 	itemOptions: function(){
@@ -59,8 +60,4 @@ Template.lobby.helpers({
 
 		return options;
 	}
-})
-
-Template.lobby.onDestroyed(function(){
-	console.log('lobbyDestroyed');
 })

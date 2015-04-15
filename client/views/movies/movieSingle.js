@@ -1,24 +1,23 @@
 
 Template.movieSingle.onCreated(function(){
 	var instance = this;
-	var movieId = Router.current().params._id;
-
-	instance.ready = new ReactiveVar(false);
-	var subscription = instance.subscribe('movieSingle', movieId);
+	instance.ready = new ReactiveVar(Router.current().ready());
 
 	Session.set('editMode', false);
 
-	instance.autorun( function(){
-		if (subscription.ready()){
-			instance.ready.set(true);
-			instance.data = Movies.findOne(movieId);
+	var subscription = instance.subscribe('movieSingle', Router.current().params._id);
 
-			if (instance.data.image){
+	instance.autorun( function(){
+		var data = Template.currentData();
+		if (data && subscription.ready()){
+			var image = data.image || null;
+
+			if (image !== null){
 				$('.page-header').css({
-					"background-image":"url('" + instance.data.image + "')"
+					"background-image":"url('" + image + "')"
 				});
 			} else {
-				var movieTitle = encodeURI(instance.data.title);
+				var movieTitle = encodeURI(data.title);
 
 				HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + movieTitle, function(err, result){
 					if (err){
@@ -54,7 +53,11 @@ Template.movieSingle.helpers({
 		}
 	},
 	synopsis: function(){
-		return emojione.shortnameToImage(this.synopsis);
+		if (this.synopsis){
+			return emojione.shortnameToImage(this.synopsis);
+		} else{
+			return false;
+		}
 	},
 	editMode: function(){
 		return Session.get('editMode');
@@ -71,5 +74,19 @@ Template.movieSingle.helpers({
 Template.movieSingle.events({
 	'click .edit-mode-btn': function(){
 		Session.set('editMode', true)
+	},
+	'click .refresh-gif-btn': function(){
+		var movieTitle = encodeURI(this.title);
+
+		HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + movieTitle, function(err, result){
+			if (err){
+
+			} else {
+				$('.page-header').css({
+					"background-image":"url('" + result.data.data.image_url + "')"
+				});
+				$('.gif-field').val(result.data.data.image_url);
+			}
+		});
 	}
 })

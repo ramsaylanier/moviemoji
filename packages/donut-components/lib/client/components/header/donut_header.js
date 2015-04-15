@@ -23,18 +23,13 @@ Template.donutHeader.onRendered(function(){
 	donutAnimation.findAnimation(options, animationType, header);
 });
 
-// Template.donutHeader.events({
-// 	'click .transition-link': function(e, template){
-// 		e.preventDefault();
-// 		var data = template.data;
-// 		var url = $(e.currentTarget).attr('href');
 
-// 		//close menu if it's open
-// 		if (Session.get('shelfState') !== 'notActive'){
-// 			donutStates.closeShelfState();
-// 		}
 
-// 		animationType = data.animateOut || 'slideOutToLeft';
-// 		donutAnimation.findAnimation(options, animationType, page, url);
-// 	}
-// })
+Template.donutHeader.events({
+	'click .modal-trigger': function(e){
+		e.preventDefault();
+		var modal = $(e.currentTarget).data('modal');
+		var modalTemplate = Template[modal];
+		Blaze.render(modalTemplate, $('.page').get(0));
+	}
+})

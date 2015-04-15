@@ -51,4 +51,15 @@ label{
 
 .synopsis-form{
 	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: white;
+
+	.form-control{
+		padding: 0;
+		margin-bottom: 1rem;
+	}
+
+	label{
+		margin-bottom: 5px;
+	}
 }

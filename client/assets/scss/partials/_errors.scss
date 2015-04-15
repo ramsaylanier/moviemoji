@@ -1,0 +1,9 @@
+.alert-error{
+	background-color: $pink;
+	padding: 1rem;
+	text-align: center;
+
+	&.success{
+		background-color: $green;
+	}
+}

@@ -1,17 +1,11 @@
 <template name="header">
 	{{#donutHeader headerOptions}}
-		{{#donutNav classes="primary-nav"}}
-			<ul class="nav-list">
-				<li><button class="create-move-btn white-btn primary-btn btn modal-trigger" data-modal="newMovieForm">+</button></li>
-				<li>
-					{{#donutToggle classes="menu-toggle" state='toggleShelfState' target='.right-shelf'}}
-						<div class="bar bar-1"></div>
-						<div class="bar bar-2"></div>
-						<div class="bar bar-3"></div>
-				{{	/donutToggle}}
-				</li>
-			</ul>
-		{{/donutNav}}
+		<button class="create-move-btn white-btn primary-btn btn modal-trigger" data-modal="newMovieForm">+</button>
+		{{#donutToggle classes="menu-toggle top" side="right" state='toggleShelfState' target='.right-shelf'}}
+			<div class="bar bar-1"></div>
+			<div class="bar bar-2"></div>
+			<div class="bar bar-3"></div>
+		{{/donutToggle}}
 
 		{{#donutToggle classes="back-toggle top" side="left" state='goBack'}}
 			<div class="bar bar-1"></div>

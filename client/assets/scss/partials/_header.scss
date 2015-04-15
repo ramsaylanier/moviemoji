@@ -8,9 +8,16 @@
 	background-color: white;
 	backface-visibility: hidden;
 	background-color: white;
+
+	.create-move-btn{
+		position: absolute;
+		right: 60px;
+		top: 5px;
+	}
 }
 
 .donut-toggle{
+	cursor: pointer;
 
 	&.top{
 		top: 23px;

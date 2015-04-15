@@ -1,10 +1,10 @@
-<template name="lobby">
+<template name="dashboard">
 	{{#page pageOptions}}
 		<div class="wrapper">
 			{{#if Template.subscriptionsReady}}
 				{{#donutList listOptions}}
 					{{#donutItem movieItemOptions}}
-						{{>movieItem}}
+						{{> movieItem}}
 					{{/donutItem}}
 				{{/donutList}}
 			{{/if}}

@@ -93,6 +93,7 @@ Template.movieSynopsisForm.events({
 
 						//reset output to synopsis to prevent double emojis
 						$('.output').html(emojione.shortnameToImage(movie.synopsis));
+						Session.set('editMode', false);
 						Errors.throw('Saved!', 'success');
 					}
 				})

@@ -34,7 +34,6 @@ Template.newMovieForm.events({
 							var pageOptions = Session.get('pageOptions');
 							var animationType = pageOptions.animateOut;
 							donutAnimation.findAnimation(pageOptions, animationType, page, url);
-							Session.set('editMode', true);
 						}, 0);
 					}
 				})
