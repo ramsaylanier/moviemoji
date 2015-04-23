@@ -1,5 +1,5 @@
 Package.describe({
-  summary: 'Reusable UI Components you can sink your teeth int0',
+  summary: 'Reusable UI Components you can sink your teeth into',
   version: '0.0.1',
   name: 'donut-components'
 });
@@ -14,8 +14,6 @@ Package.onUse(function (api) {
     'iron:router'                   
   ]);
 
-  // client
-
   api.use([
     'jquery',                   
     'underscore',                
@@ -26,15 +24,8 @@ Package.onUse(function (api) {
   ], ['client']);
 
   api.add_files([
-  //   'lib/custom_fields.js',
-  //   'lib/hooks.js',
-  //   'lib/main.js',
     'lib/routes.js',
-  //   'lib/settings.js',
-  //   'lib/templates.js',
   ], ['client', 'server']);
-
-  // client
 
   api.add_files([
     'lib/client/components/header/donut_header.html',

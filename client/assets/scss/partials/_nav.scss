@@ -1,6 +1,7 @@
 .app-menu{
 	margin-top: 60px;
 }
+
 .menu-item{
 	width: 100%;
 	a{
@@ -9,7 +10,6 @@
 		display: block;
 		padding: .5rem;
 		margin-bottom: 3px;
-
 	}
 
 	&.menu-item__logout{
@@ -17,4 +17,58 @@
 			background-color: $pink;
 		}
 	}
+}
+
+.desktop-nav{
+	.account-toggle{
+		color: $pink;
+		float: right;
+		margin-right: 30px;
+		padding: .5rem;
+	}
+
+	.menu-items{
+		float: right;
+	}
+
+	.menu-item{
+		width: auto;
+		display: inline-block;
+
+		a{
+			background-color: transparent;
+			color: black;
+		}
+
+		&.menu-item__logout{
+			float: right;
+			a{
+				background-color: transparent;
+				color: $pink;
+			}
+		}
+	}
+}
+
+.account-nav{
+	position: absolute;
+	height: 40px;
+	width: 100%;
+	top: -40px;
+	left: 0;
+	background-color: $pink;
+
+	.menu-items{
+		text-align: right;
+		padding-right: 30px;
+
+		a{
+			color: white;
+		}
+	}
+}
+
+.shelf{
+	background-color: black;
+	border-left: 5px solid white;
 }

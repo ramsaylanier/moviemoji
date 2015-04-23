@@ -19,18 +19,7 @@ Template.loginForm.events({
 			if (error)
 				Errors.throw(error.reason, 'error')
 			else{
-				var element = $('.login');
-				var content = $('.card-flipper');
-
-				content.removeClass('flipped').addClass('blown-up');
-
-				donutTransition.blowUp(element, content);
-
-				Meteor.setTimeout(function(){
-					console.log('loggedIn');
-					Session.set('loggedIn', true);
-					Router.go('/lobby');
-				}, 500);
+				loginAnimation();
 			}
 		})
 	},
@@ -66,7 +55,7 @@ Template.loginForm.events({
 			if (error)
 				console.log(error);
 			else{
-				Router.go('/lobby');
+				Router.go('/');
 			}
 		})
 	}

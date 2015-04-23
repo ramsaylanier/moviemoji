@@ -24,7 +24,6 @@ Template.donutHeader.onRendered(function(){
 });
 
 
-
 Template.donutHeader.events({
 	'click .modal-trigger': function(e){
 		e.preventDefault();

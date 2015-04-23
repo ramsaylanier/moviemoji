@@ -63,41 +63,5 @@ Template.lobby.helpers({
 		}
 
 		return options;
-	},
-	listOptions: function(){
-		var options = {
-			animateItems: true,
-			waitForReady: true,
-			animateIn: 'none',
-			animateOut: 'none',
-			itemAnimateIn: 'slideInFromBottom_Short',
-			itemAnimateOut: 'fadeOut',
-			duration: 2000,
-			easing: [600, 15],
-			classes: 'movie-list',
-			context: Template.instance().publicMovies(),
-			dataReady: Template.instance().ready.get()
-		};
-
-		return options;
-	},
-	itemOptions: function(){
-		var options = {
-			classes: 'create-movie-item hidden-item',
-			duration: 2000,
-			easing: [300, 15],
-			delay: 200
-		}
-
-		return options;
-	},
-	movieItemOptions: function(){
-		var options = {
-			animateIn: 'none',
-			animateOut: 'none',
-			classes: 'movie-item hidden-item card'
-		}
-
-		return options;
 	}
 });

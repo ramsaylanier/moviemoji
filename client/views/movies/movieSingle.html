@@ -1,23 +1,76 @@
 <template name="movieSingle">
 	{{#page pageOptions}}
 		{{#if Template.subscriptionsReady}}
-			<div class="page-header" style="background-image: url('{{image}}');">
-				<div class="page-content">
-					<div class="wrapper">
-						<h1 class="page-title {{editable}}"><span {{editable}}>{{title}}</span></h1>
-						<div class="output">{{{synopsis}}}
-						</div>
+			{{#with movieSingle}}
+				<div class="page-header" style="background-image: url('{{image}}')">
+					<div class="page-content">
+						<div class="wrapper">
+							{{#donutItem titleOptions}}
+								<h1 class="page-title {{editable}}"><span class="movie-name" {{editable}}>{{title}}</span><a class="movie-author" href="/{{authorName}}">by {{authorName}}</a></h1>
+							{{/donutItem}}
 
-						{{#if isAuthor}}
-							{{#if editMode}}
-								{{> movieSynopsisForm}}
-							{{else}}
-								<button class="btn primary-btn center-btn edit-mode-btn">Edit</button>
-							{{/if}}
-						{{/if}}
+							{{#donutItem outputOptions}}
+								<div class="output">{{{synopsis}}}
+								</div>
+							{{/donutItem}}
+
+
+							<div class="page-actions">
+								{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}					
+									<a href="#" target="_blank" class="btn social-btn tweet-btn">{{>twitterIcon}}</a>
+								{{/donutItem}}
+								{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}					
+									<a href="#" target="_blank" class="btn social-btn facebook-btn">{{>facebookIcon}}</a>
+								{{/donutItem}}
+								{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}					
+									<button class="btn social-btn favorite-btn {{favorited}}">{{>starIcon}}</button>
+								{{/donutItem}}
+
+							
+								{{#if isAuthor}}
+									{{#unless editMode}}
+										{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}
+										<button class="btn primary-btn center-btn edit-mode-btn">Edit</button>
+										{{/donutItem}}
+									{{/unless}}
+								{{/if}}
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+
+				{{#if isAuthor}}
+					{{#if editMode}}
+						{{#donutItem editFormOptions}}
+							{{> movieSynopsisForm}}
+						{{/donutItem}}
+					{{/if}}
+				{{/if}}
+
+				{{#if favorites}}
+					<section class="page-section white-bg">
+						<div class="wrapper">
+							<h1 class="section-heading">Favs ({{favorites.length}})</h1>
+							{{#donutList listOptions}}
+								{{#donutItem itemOptions}}
+									<a href="/{{this}}">{{this}}</a>
+								{{/donutItem}}
+							{{/donutList}}
+						</div>
+					</section>
+				{{/if}}
+
+				{{#if otherMovies.count}}
+					<section class="page-section">
+						<div class="wrapper clearfix">
+							<h1 class="section-heading">Other Movies ({{otherMovies.count}})</h1>
+							{{#if Template.subscriptionsReady}}
+								{{> userMoviemojiList otherMovies}}
+							{{/if}}
+						</div>
+					</section>
+				{{/if}}
+			{{/with}}
 		{{/if}}
 	{{/page}}
 </template>

@@ -1,0 +1,25 @@
+.dashboard-page{
+	.favorite-btn{
+		display: none;
+	}
+}
+
+.dashboard-block{
+	margin-top: 2rem;
+}
+
+.dashboard-username{
+	// font-size: 2rem;
+	text-transform: uppercase;
+	margin-bottom: .5rem;
+}
+
+.dashboard-links{
+	li{
+		display: inline-block;
+
+		a{
+			display: block;
+		}
+	}
+}

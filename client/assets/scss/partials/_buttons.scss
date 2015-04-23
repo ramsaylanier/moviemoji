@@ -5,6 +5,7 @@
 	cursor: pointer;
 	border-radius: 1px;
 	font-family: $heading;
+	padding: .25rem .5rem;
 }
 
 .account-btn{
@@ -54,7 +55,8 @@
 }
 
 .social-login-btn{
-
+	font-size: 1.2rem;
+	padding: 5px 10px;
 }
 
 .edit-mode-btn{
@@ -67,6 +69,10 @@
 	float: right;
 }
 
+.show-more-btn{
+	display: none;
+}
+
 .favorite-btn{
 	position: absolute;
 	background-color: transparent;
@@ -75,13 +81,8 @@
 	padding-right: 0px 15px 0px 5px;
 	border-radius: 0;
 
-	.star-icon{
+	@media #{$mobile}{
 		width: 30px;
-	}
-
-	&:focus{
-		outline: none;		
-		outline: 3px solid $pink;
 	}
 
 	polygon{
@@ -99,5 +100,43 @@
 		polygon{
 			fill: $pink;
 		}
+	}
+
+	&.social-btn{
+		position: relative;
+		background-color: darken(white, 25%);
+		width: inherit;
+		padding: .4rem .75rem;
+
+		polygon{
+			fill: white;
+		}
+
+		&:hover{
+			polygon{
+				fill: black;
+			}
+		}
+
+		&.favorited{
+			background-color: $pink;
+			polygon{
+				fill: white;
+			}
+		}
+	}
+}
+
+.social-btn{
+	display: inline-block;
+	margin-right: .5rem;
+	padding: .4rem .75rem;
+
+	&.tweet-btn{
+		background-color: $twitterBlue;
+	}
+
+	&.facebook-btn{
+		background-color: $facebookBlue;
 	}
 }

@@ -3,15 +3,23 @@ Template.donutList.onRendered(function(){
 	var data = instance.data || 0;
 	var options = {
 		duration: data.duration || 500,
-		delay: data.delay || 0,
+		delay: data.delay || 50,
 		easing: data.easing || 'easeOut'
 	}
 
 	Session.set('itemCount', 0);
 
+	var items = instance.findAll('.item');
+
+	_.each(items, function(item, index){
+		Meteor.setTimeout(function(){
+    		donutAnimation.animate($(item), data.itemAnimateIn, options);
+    	}, options.delay * index);
+	});
+
 	if (data.animateItems){
-		instance.$('.transition-wrapper').get(0)._uihooks = {
-		    insertElement: function(node, next){
+		instance.find('.transition-wrapper')._uihooks = {
+		    insertElement: function(node, next){		 
 		    	var itemCount = Session.get('itemCount');
 		    	itemCount ++;	
 		    	Session.set('itemCount', itemCount);	    	
@@ -20,17 +28,15 @@ Template.donutList.onRendered(function(){
 
 		    	Meteor.setTimeout(function(){
 		    		donutAnimation.animate($(node), data.itemAnimateIn, options);
-		    	}, 50 * itemCount);
+		    	}, options.delay * itemCount);
 		    },
 		    removeElement: function(node, next){
 	    		donutAnimation.animate($(node), data.itemAnimateOut, options);
-
 	    		Meteor.setTimeout(function(){
 	    			$(node).remove();
 	    		}, options.duration + options.delay)
 		    },
-		    moveElement: function(node,next){
-		    	console.log('hi');
+		    moveElement: function(node,next){		  
 		    	var $node = $(node), $next = $(next);
 				var oldTop = $node.offset().top;
 				var height = $node.outerHeight(true);

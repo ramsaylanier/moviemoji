@@ -22,32 +22,40 @@ var twistIn = function(element){
 	element.velocity({
 		translateX: ["-50%", [250, 15], "-50%"],
 		translateY: ["-50%", [250, 15], "-50%"],
-		rotateY: ["-45deg"]
+		rotate: ["-45deg"]
 	}, 0);
 
 	var easing = [10, 5];
 
 	element.velocity({
 		top: ["50%", easing, "120vh"]
-	}, {duration: 1000, queue: false});
+	}, {duration: 2000, queue: false});
 
 	element.velocity({
 		rotateZ: ["0deg", easing, "90deg"],
-	}, {duration: 1000, queue: false});
+	}, {duration: 2000, queue: false});
 
 	element.velocity({
 		rotateY: "0deg"
-	}, {duration: 1000, delay: 0, queue: false});
+	}, {duration: 2000, delay: 0, queue: false});
 
 	element.velocity({
 		rotateX: ["0deg", easing, "-0deg"],
 		opacity: 1
-	}, {duration: 1000, queue: false});
+	}, {duration: 2000, queue: false});
 
 	// return {top: "50%", rotateZ: "0deg", rotateY:"0deg", rotateX:"0deg", translateX: "-50%", translateY: "-50%"}
 }
 
 var flipCard = function(flipper, card){
+
+	var width = 400;
+	var height = 400;
+
+	if (width > window.innerWidth){
+		width = window.innerWidth;
+		height = window.innerWidth;
+	}
 
 	if (!flipper.hasClass('flipped')){
 		flipper.velocity({
@@ -64,14 +72,13 @@ var flipCard = function(flipper, card){
 		}, 1000, [300, 25]);
 
 		card.velocity({
-			height: 400,
-			width: 400
+			height: width,
+			width: height
 		}, 1000, [300, 25]);
 	}
 }
 
 var flipItem = function(flipper){
-	console.log(flipper);
 	flipper.velocity({
 		rotateX: "180deg"
 	}, 1000, [300, 25]);

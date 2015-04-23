@@ -46,6 +46,7 @@ Template.movieSynopsisForm.onRendered(function(){
 
 Template.movieSynopsisForm.helpers({
 	movieImage: function(){
+		console.log(this);
 		if (this.image){
 			return this.image
 		} else {
@@ -57,6 +58,19 @@ Template.movieSynopsisForm.helpers({
 })
 
 Template.movieSynopsisForm.events({
+	'click .delete-movie-btn': function(e){
+		if (Meteor.userId() !== this.author){
+			Errors.throw('You are not authorized to delete this.', 'error');
+		} else {
+			Meteor.call('deleteMovie', this._id, Meteor.userId(), function(error){
+				if (error){
+					Errors.throw(error.reason, 'error');
+				} else{
+					Router.go('/' + Meteor.user().username);
+				}
+			})
+		}
+	},
 	'keyup .synopsis-field': function(e){
     	var input = $(e.target).val();
     	$(e.target).val(input.trim());
@@ -82,7 +96,7 @@ Template.movieSynopsisForm.events({
 			} else {
 				var movie = this;
 				movie.synopsis = synopsis;
-				movie.title = $('.page-title').text();
+				movie.title = $('.movie-name').text();
 				movie.image = $('.gif-field').val();
 				movie.published = true;
 			
@@ -99,5 +113,19 @@ Template.movieSynopsisForm.events({
 				})
 			}	
 		}
+	},
+	'click .refresh-gif-btn': function(){
+		var movieTitle = encodeURI(this.title);
+
+		HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + movieTitle, function(err, result){
+			if (err){
+				console.log(err);
+			} else {
+				$('.page-header').css({
+					"background-image":"url('" + result.data.data.image_url + "')"
+				});
+				$('.gif-field').val(result.data.data.image_url);
+			}
+		});
 	}
 })

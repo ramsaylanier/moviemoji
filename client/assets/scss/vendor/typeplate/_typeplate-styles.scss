@@ -11,7 +11,7 @@ html {
 
 body {
   @extend %typl8-breakword;
-  @include typl8-hyphens(auto);
+  // @include typl8-hyphens(auto);
   color: $typl8-copy-color;
 }
 

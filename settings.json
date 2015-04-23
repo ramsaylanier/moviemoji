@@ -1,11 +1,18 @@
 {
-  "public" : {
-    "ga": {
-      "account":"UA-59142366-1"
-    }
-  },
-  "twitter": {
-		"public":"ISXiiVOF2Q0TGL2nUqzUypGoS",
-		"private":"S6NpVmQ59Akrz2YeVIE8GLooN8IvJiZzJxhW3G5WH2d7wRLZgJ"
+	"public" : {
+		"ga": {
+		  "account":"UA-59142366-1"
+		},
+		"facebook": {
+			"appId":"880094882064053"
+		}
+	},
+	"twitter": {
+		"public":"hqBUZh5B1kpwIb57YqdoBbOiz",
+		"private":"eL43jiiqDw6Sm54EM8ya49hcMeGQLmVa0c4QUbPRTY1dDZuhit"
+	},
+	"facebook": {
+		"appId":"880094882064053",
+		"appSecret":"b1bd337cad5fabf74abacff010f9e623"
 	}
 }

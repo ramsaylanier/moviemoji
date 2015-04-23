@@ -2,13 +2,22 @@
 	box-sizing: border-box;
 }
 
+html{
+	@media #{$mobile}{
+		font-size: 80%;
+	}
+}
+
 body{
 	font-family: $copy;
+	background-color: black;
 }
+
 
 a{
 	text-decoration: none;
 }
+
 .wrapper{
 	max-width: 1000px;
 	width: 100%;
@@ -20,9 +29,9 @@ a{
 	position: absolute;
 	top: 120vh;
 	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
+	// transform: translate3d(-50%, -50%, 0%);
 	text-align: center;
-	backface-visibility: hidden;
+	// backface-visibility: hidden;
 }
 
 .login-section{
@@ -48,10 +57,19 @@ a{
 	}
 }
 
+.social-login{
+	padding: 1rem 0rem;
+	background-color: white;
+}
+
 .card{
 	position: relative;
 	overflow: hidden;
 	perspective: 2000;
+
+	@media #{$mobile}{
+		overflow: visible;
+	}
 
 
 	.card-flipper{
@@ -89,52 +107,21 @@ a{
 	}
 }
 
-.lobby-page{
-	background-color: white;
+.modal-content{
+	padding: 1rem;
 }
 
-.fold-out-container{
-	width: 100%;
-	max-height: 0px;
-	overflow: hidden;
-	background-color: darken(white, 10%);
-	transform-origin: top center;
-	transition: all 300ms ease-out;
-	position: relative;
-	transform: rotateX(-90deg);
-	margin-top: 250px;
-
-
-
-	.fold-out-content{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-
-		transform: rotateX(-90deg);
-		transition: all 300ms ease-out 0ms;
-		transform-origin: top center;
-		backface-visibility: hidden;
-	}
-
-	&.active{
-		margin-top: 50px;
-		transform: rotateX(0deg);
-		padding: 100px 0px;
-		max-height: 200px;
-
-		&:before, &:after{
-			background-color: transparent;
-			transform: rotateX(0deg);
-		}
-
-		.fold-out-content{
-			transform: rotateX(0deg);
-		}
+.mobile-only{
+	display: none;
+	@media #{$mobile}{
+		display: block;
 	}
 }
 
-.fold-out-content{
+.underlined{
+	text-decoration: underline;
+}
 
+.strong{
+	font-weight: 700;
 }

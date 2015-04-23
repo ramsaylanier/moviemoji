@@ -1,0 +1,24 @@
+<template name="desktopNav">
+	<div class="desktop-nav">
+		{{#if currentUser}}
+			<nav class="account-nav">
+				<ul class="menu-items">
+					<li class="menu-item"><a href="#" class="logout-link account-link">Logout</a></li>
+					<li class="menu-item"><a href="/profile" class="profile-link account-link">Profile</a></li>
+				</ul>
+			</nav>
+
+			<a href="#" class="account-toggle account-link">{{currentUsername}} </a>
+		{{/if}}
+
+		<div class="wrapper">
+			<ul class="menu-items">
+				{{#each menuItems}}
+					<li class="menu-item menu-item__{{this.name}}">
+						<a href="{{this.url}}" class="transition-link {{this.classes}}">{{this.name}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</template>

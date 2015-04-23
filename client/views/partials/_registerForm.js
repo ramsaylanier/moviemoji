@@ -41,7 +41,7 @@ Template.registerForm.events({
 
 					Meteor.setTimeout(function(){
 						Session.set('loggedIn', true);
-						Router.go('/lobby');
+						Router.go('/');
 					}, 500);
 				}
 			})

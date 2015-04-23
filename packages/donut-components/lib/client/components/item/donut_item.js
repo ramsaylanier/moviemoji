@@ -1,12 +1,9 @@
-var itemOptions = {};
-var item, itemData, animationType;
-
 Template.donutItem.onCreated(function(){
 	var instance = this;
 
-	itemData = instance.data || 0;
-	
-	itemOptions = {
+	var itemData = instance.data || 0;
+
+	instance.itemOptions = {
 		easing: itemData.easing || 'easeOut',
 		duration: itemData.duration || 500,
 		delay: itemData.delay || 0,
@@ -16,7 +13,9 @@ Template.donutItem.onCreated(function(){
 });
 
 Template.donutItem.onRendered(function(){
-	item = this.$('.item');
-	animationType = itemOptions.animateIn || 'slideInFromRight';
-	donutAnimation.findAnimation(itemOptions, animationType, item);
+	var instance = this;
+	var item = this.$('.item');
+	var options = instance.itemOptions;
+	var animationType = options.animateIn || 'slideInFromRight';
+	donutAnimation.findAnimation(options, animationType, item);
 });

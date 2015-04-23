@@ -12,7 +12,6 @@ Template.sideNav.events({
 	},
 	'click .logout-link': function(e){
 		e.preventDefault();
-		console.log(e);
 		Session.set('loggedIn', false);
 		donutStates.toggleShelfState();
 		animateMenuToggle($('.menu-toggle'), 'open');
@@ -22,24 +21,5 @@ Template.sideNav.events({
 			Meteor.logout();
 			Router.go('/');
 		}, 1000);
-	}
-})
-
-Template.sideNav.helpers({
-	menuItems: function(){
-		var menuItems = [];
-
-		if (Meteor.userId()){
-			menuItems = [
-				{name: 'dashboard', url:'/dashboard'},
-				{name: 'lobby', url:'/lobby'}
-			]
-		} else {
-			menuItems = [
-				{name: 'lobby', url:'/lobby'}
-			]
-		}
-
-		return menuItems;
 	}
 })

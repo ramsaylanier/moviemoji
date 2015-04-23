@@ -14,31 +14,29 @@ Template.newMovieForm.events({
 		e.preventDefault();
 
 		if (!Meteor.userId()){
-			Errors.throw('You must be logged in to perform this action.', 'error')
+			Errors.throw('You must be logged in.', 'error')
 		} else {
 			var title = $(e.target).find('[name=movie-title]').val();
 
 			if (!title){
 				Errors.throw('Please enter a movie title.', 'error');
 			} else {
-				Meteor.call('createMovie', title, function(error, result){
+				Meteor.call('createMovie', title, Meteor.user().username, function(error, result){
 					if (error){
 						Errors.throw(error.reason, 'error')
 					} else {
 						var modalOptions = Session.get('modalOptions');
 						donutStates.switchModalState();
 
-						Meteor.setTimeout(function(){
-							var page = $('.page');
-							var url = '/movies/' + result; 
-							var pageOptions = Session.get('pageOptions');
-							var animationType = pageOptions.animateOut;
-							donutAnimation.findAnimation(pageOptions, animationType, page, url);
-						}, 0);
+						var page = $('.page');
+						var url = '/movies/' + result; 
+						var pageOptions = Session.get('pageOptions');
+						var animationType = pageOptions.animateOut;
+						donutAnimation.findAnimation(pageOptions, animationType, page, url);
+						Session.set('editMode', true);
 					}
 				})
 			}
 		}
-
 	}
 })

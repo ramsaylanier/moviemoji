@@ -1,8 +1,17 @@
 <template name="dashboard">
 	{{#page pageOptions}}
-		<div class="wrapper">
-			{{> userMoviemojiList userMovies}}
-			{{> userMoviemojiList favorites}}
+		<div class="wrapper clearfix">	
+			<button class="btn center-btn primary-btn pink-btn modal-trigger" data-modal="newMovieForm">Create New Moviemoji</button>		
+			<div class="user-movies dashboard-block">
+				<span class="block-title">Your Moviemoji</span>
+				{{#if Template.subscriptionsReady}}
+					{{#if userMovies.count}}
+						{{> userMoviemojiList userMovies}}
+					{{else}}
+						<p>You haven't created any Moviemoji {{#emojione}}:cry:{{/emojione}} </p>
+					{{/if}}
+				{{/if}}
+			</div>
 		</div>
 	{{/page}}
 </template>

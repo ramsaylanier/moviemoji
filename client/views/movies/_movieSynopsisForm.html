@@ -1,7 +1,7 @@
 <template name="movieSynopsisForm">
-	<form class="synopsis-form">
+	<form class="synopsis-form tight">
 		<div class="form-control">
-			<label>Enter emoji synopsis - <a href="#">how does this work?</a></label>
+			<label>Enter emoji synopsis - <a href="#" class="modal-trigger" data-modal="helpModal">how does this work?</a></label>
 			<textarea name="synopsis-field" class="synopsis-field field">{{{synopsis}}}</textarea>
 		</div>
 
@@ -12,6 +12,7 @@
 
 		<div class="form-control">
 			<input type="submit" class="submit-btn btn" value="Publish"/>
+			<a class="btn primary-btn pink-btn delete-movie-btn">Delete</a>
 			<a class="btn primary-btn pink-btn refresh-gif-btn">New Gif</a>
 		</div>
 	</form>

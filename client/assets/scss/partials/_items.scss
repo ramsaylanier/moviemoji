@@ -1,0 +1,137 @@
+.hidden-item{
+	opacity: 0;
+}
+
+.inline-item{
+	display: inline-block;
+}
+
+.movie-list{
+	margin-top: 1rem;
+	padding-bottom: 2rem;
+}
+
+.movie-item{
+	margin-bottom: 5px;
+	position: relative;
+	z-index: 1;
+	height: 60px;
+	overflow: visible !important;
+	cursor: pointer;
+
+	&:hover{
+		.front{
+			background-color: darken(white, 5%);
+		}
+		.favorite-btn{
+			opacity: 1;
+		}
+	}
+
+	&.with-user{
+		.movie-title, .movie-author{
+			padding: 0rem 1rem 0rem 50px;
+		}
+	}
+
+	.front{
+		transition: background-color 300ms ease-out;
+		background: white;
+	}
+
+	.back{
+		background: white;
+	}
+
+	.card-content{
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+}
+
+.movie-title{
+	font-family: $heading;
+	font-size: 1.6rem;
+	font-weight: 100;
+	margin: 0;
+	color: black;
+	padding: 0rem 1rem;
+	cursor: pointer;
+	display: block;
+	transition: padding 100ms ease-out;
+
+
+	@media #{$mobile}{
+		font-size: 1.2rem;
+		padding-left: 35px;
+		// flex: 1 100%;
+	}
+}
+
+.movie-author{
+	font-size: .8rem;
+	display: block;
+	padding: 0rem 1rem;
+	transition: padding 100ms ease-out;
+	color: $pink;
+}
+
+.movie-synopsis{
+	font-size: .9rem;
+	line-height: 0rem;
+	flex: 5;
+	white-space: nowrap;
+	overflow-x: auto;
+	padding: 5px;
+	padding: 1rem .5rem;
+	backface-visibility: visible;
+
+	@media #{$mobile}{
+		font-size: 1rem;
+		// flex: 1 100%;
+	}
+}
+
+.movie-date{
+	height: 100%;
+	font-size: 1.2rem;
+	line-height: 1.7rem;
+	font-weight: 700;
+	font-family: $heading;
+	margin: 0;
+	padding: 1rem;
+	border-left: 2px solid $pink;
+	color: black;
+	text-align: center;
+	background-color: white;
+}
+
+.favorite-item{
+	background-color: $pink;
+	margin-bottom: 5px;
+	position: relative;
+	display: inline-block;
+
+	a{
+		padding: .5rem;
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: white;
+	}
+}
+
+// .edit-form-item{
+// 	position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 100%;
+
+// 	form{
+// 		position: absolute;
+// 		width: 100%;
+// 		left: 50%;
+// 		transform: translateX(-50%);
+// 	}
+// }

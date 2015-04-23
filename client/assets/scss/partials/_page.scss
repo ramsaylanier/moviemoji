@@ -1,8 +1,21 @@
 .page{
+	position: relative;
+	opacity: 0;
+	min-height: 100vh;
 	padding-top: 90px;
+	overflow: hidden;
+
 	&.with-header{
+		padding-top: 40px;
+	}
+
+	@media #{$mobile}{
 		padding-top: 60px;
 	}
+}
+
+.dark-page{
+	background-color: black;
 }
 
 .lobby-page{
@@ -11,42 +24,56 @@
 }
 
 .movie-page{
+	background-color: black;
 	.page-content{
-		position: absolute;
+		position: relative;
 		width: 100%;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
+		height: 100%;
 
 		.wrapper{
-			max-width: 50%;
+			width: 90%;
+			max-width: 600px;
 			margin-left: auto;
 			margin-right: auto;
+
+			@media #{$mobile}{
+				max-width: 90%;
+			}
 		}
 	}
 }
 
 .page-header{
-	height: 100vh;
-	width: 100vw;
+	width: 100%;
+	min-height: 80vh;
 	padding: 1rem;
 	background-size: cover;
 	background-position: center center;
 	background-color: black;
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
-	overflow: auto;
+	display: flex;
+	align-items: center;
 }
 
 .page-title{
 	text-align: center;
+	background-color: fade-out(black, .3);
+	padding: 1rem;
+	
 	span{
-		background-color: fade-out(black, .3);
-		padding: 1rem;
+		display: block;
 		color: white;
 		transition: all 300ms ease-out;
 		outline: 10px solid transparent;
+		margin-bottom: 10px;
+	}
+
+	.movie-author{
+		padding: 0;
+		font-size: 2rem;
+		color: $pink;
 	}
 
 	&.contentEditable{
@@ -62,9 +89,22 @@
 	padding: 2rem 0rem;
 }
 
+.page-section{
+	padding: 1rem 0rem;
+
+	.section-heading{
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+		color: white;
+		font-weight: 100;
+		border-bottom: 1px solid white;
+	}
+}
+
 .output{
 	position: relative;
-	padding: 1rem 1rem .5rem 1rem;
+	padding: 2rem 2rem 1.5rem 2rem;
 	background-color: white;
 	margin-bottom: 1rem;
 	display: inline-block;
@@ -74,4 +114,11 @@
 	.emojione{
 		margin-bottom: 8px;
 	}
+}
+
+.page-actions{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 }

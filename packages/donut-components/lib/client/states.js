@@ -28,10 +28,12 @@ donutStates = {
 	closeShelfState: function(){
 		Session.set('shelfState', 'notActive');
 		var shelfs = $('.shelf');
+		$('.donut-toggle').removeClass('active');
 
 		_.each(shelfs, function(shelf){
 			if ($(shelf).hasClass('active')){
 				donutAnimation.shelfClose($(shelf));
+				$(shelf).removeClass('active');
 			}
 		});
 	},

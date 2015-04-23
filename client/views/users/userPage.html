@@ -1,0 +1,16 @@
+<template name="userPage">
+	{{#page pageOptions}}
+		<div class="wrapper clearfix">
+			<section class="user-movies page-section">
+				<h1 class="section-heading">{{username}}</h1>
+				{{#if Template.subscriptionsReady}}
+					{{#if userMovies.count}}
+						{{> userMoviemojiList userMovies}}
+					{{else}}
+						<p>{{username}} hasn't created any Moviemoji {{#emojione}}:cry:{{/emojione}}</p>
+					{{/if}}
+				{{/if}}
+			</section>
+		</div>
+	{{/page}}
+</template>

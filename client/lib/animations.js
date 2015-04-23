@@ -61,3 +61,19 @@ animateMenuToggle = function(toggle, state){
 		}, {duration: 300, easing: easingFunc, delay: 0})
 	}
 }
+
+loginAnimation = function(){
+	var element = $('.login');
+	var content = $('.card-flipper');
+
+	content.removeClass('flipped').addClass('blown-up');
+
+	donutTransition.blowUp(element, content);
+
+	Meteor.setTimeout(function(){
+		Session.set('login', null);
+		Session.set('loggedIn', true);
+		Router.go('/');
+
+	}, 500);
+}

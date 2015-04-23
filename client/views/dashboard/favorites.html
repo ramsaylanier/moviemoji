@@ -1,0 +1,17 @@
+<template name="favorites">
+	{{#page pageOptions}}
+		<div class="wrapper clearfix">
+			<button class="btn center-btn primary-btn pink-btn modal-trigger" data-modal="newMovieForm">Create New Moviemoji</button>
+			<div class="user-favorites dashboard-block">
+				<span class="block-title">Your Favorites</span>
+				{{#if Template.subscriptionsReady}}
+					{{#if favorites.count}}
+						{{> userMoviemojiList favorites}}
+					{{else}}
+						<p>You don't have any favorites.</p>
+					{{/if}}
+				{{/if}}
+			</div>
+		</div>
+	{{/page}}
+</template>

@@ -1,3 +1,27 @@
+var startFlip = function(){
+	console.log('flipping');
+	var flipper = $('.login .card-flipper');
+	var card = $('.login.card');
+
+
+	flipper.toggleClass('flipped');
+
+	donutTransition.flipCard(flipper, card);
+}
+
+Template.login.onRendered(function(){
+
+	var instance = this;
+	instance.login = new ReactiveVar(Session.get('login'));
+
+	instance.autorun(function(){
+		console.log(Session.get('login'));
+		if (Session.get('login')){
+			startFlip();
+		}
+	});
+})
+
 Template.login.helpers({
 	itemOptions: function(){
 		var options = {
@@ -19,19 +43,44 @@ Template.login.helpers({
 Template.login.events({
 	'click .flip-btn': function(e){
 		e.preventDefault();
+		console.log(Session.get('login'));
 
 		if ($(e.currentTarget).hasClass('login-btn')){
-			Session.set('login', true)
+			Session.set('login', true);
 		} else if ($(e.currentTarget).hasClass('register-btn')) {
-			Session.set('login', false)
+			Session.set('login', false);
+			startFlip();
+		} else {
+			Meteor.setTimeout(function(){
+				Session.set('login', false)
+			}, 500);
+			startFlip();
 		}
+	},
+	'click .twitter-login-btn': function(){
+		var loginStyle = 'popup';
+		var device = Session.get('device');
 
-		var flipper = $('.card-flipper');
-		var card = $('.card');
+		Meteor.loginWithTwitter({loginStyle: loginStyle}, function(error){
+			if (error){
+				Errors.throw(error, 'error');
+				console.log(error);
+			}
+			else
+				loginAnimation();
+		})
+	},
+	'click .facebook-login-btn': function(){
+		var loginStyle = 'popup';
+		var device = Session.get('device');
 
-
-		flipper.toggleClass('flipped');
-
-		donutTransition.flipCard(flipper, card);
-	}
+		Meteor.loginWithFacebook({loginStyle: loginStyle}, function(error){
+			if (error){
+				Errors.throw(error, 'error');
+				console.log(error);
+			}
+			else
+				loginAnimation();
+		})
+	},
 })
