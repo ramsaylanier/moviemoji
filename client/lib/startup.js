@@ -22,6 +22,13 @@ Meteor.startup(function(){
 	    },
 	    og: {
 	      'image': 'http://moviemoji.com/img/logo.png' 
+	    },
+	    twitter: {
+	    	'card': 'summary_large_image',
+	    	'site': '@moviemojiapp',
+	    	'description': 'Create and share movie synopses with nothing but emoji. Two thumbs wayyyy up.',
+	    	'title': 'Moviemoji',
+	    	'image': 'http://moviemoji.com/img/logo.png'
 	    }
 	});
 })
