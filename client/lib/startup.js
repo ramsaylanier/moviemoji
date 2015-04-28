@@ -14,4 +14,14 @@ Meteor.startup(function(){
 		appId: Meteor.settings.public.facebook.appId,
 		version: 'v2.3'
 	})
+
+	SEO.config({
+	    title: 'Moviemoji - movies with emoji.',
+	    meta: {
+	      'description': 'Movie synopses with pure emoji. Two thumbs wayyyy up.'
+	    },
+	    og: {
+	      'image': 'http://moviemoji.com/img/logo.png' 
+	    }
+	});
 })
