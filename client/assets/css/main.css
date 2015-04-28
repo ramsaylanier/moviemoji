@@ -688,8 +688,27 @@ a {
 .flip-toggle {
   position: absolute;
   top: 0;
-  right: 0;
-  font-size: 1rem; }
+  right: .75rem;
+  height: 32px;
+  width: 32px; }
+  .flip-toggle .bar {
+    top: 8px;
+    left: 15px;
+    width: 2px;
+    height: 16px;
+    background-color: white;
+    position: absolute;
+    -webkit-transform-origin: center left;
+        -ms-transform-origin: center left;
+            transform-origin: center left; }
+    .flip-toggle .bar.bar-1 {
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    .flip-toggle .bar.bar-2 {
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
 
 .social-login-btn {
   font-size: 1.2rem;
