@@ -93,7 +93,8 @@
 }
 
 .show-more-btn{
-	display: none;
+	opacity: 0;
+	pointer-events: none;
 }
 
 .favorite-btn{

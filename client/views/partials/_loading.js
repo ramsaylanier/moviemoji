@@ -15,6 +15,10 @@ Template.loading.onRendered(function(){
 			Meteor.clearInterval(interval);
 		}
 	}, 300);
+
+	this.$('.loading-wrapper').velocity({
+		opacity: [1,0]
+	}, {duration: 300, delay: 300});
 })
 
 Template.loading.helpers({

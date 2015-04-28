@@ -394,9 +394,15 @@ a {
   color: white; }
 
 .loading-wrapper {
-  position: relative;
-  margin: 3rem;
-  text-align: center; }
+  position: fixed;
+  left: 50%;
+  top: 90%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  text-align: center;
+  background-color: black;
+  padding: 2rem;
+  opacity: 0; }
   .loading-wrapper .emoji {
     -webkit-transition: opacity 300ms ease-out;
             transition: opacity 300ms ease-out; }
@@ -723,7 +729,8 @@ a {
   float: right; }
 
 .show-more-btn {
-  display: none; }
+  opacity: 0;
+  pointer-events: none; }
 
 .favorite-btn {
   position: absolute;
@@ -976,6 +983,17 @@ label {
     height: 100%;
     color: white; }
 
+.favorite-count {
+  position: absolute;
+  font-size: .6rem;
+  color: white;
+  top: 10px;
+  right: 10px;
+  background-color: #f42045;
+  padding: 0px 3px;
+  border-radius: 2px;
+  border: 1px solid white; }
+
 .social-icon {
   width: 25px;
   height: 25px; }
@@ -997,6 +1015,12 @@ label {
 
 .header {
   z-index: 900; }
+
+.loading-wrapper {
+  z-index: 300; }
+
+.movie-list {
+  z-index: 200; }
 
 .page {
   z-index: 100; }

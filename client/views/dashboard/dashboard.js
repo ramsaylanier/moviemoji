@@ -4,7 +4,7 @@ Template.dashboard.onCreated(function(){
 	instance.ready = new ReactiveVar(false);
 	instance.loaded = new ReactiveVar(0);
 
-	Session.set('limit', 10);
+	Session.set('limit', 15);
 
 	instance.userMovies = new ReactiveVar();
 

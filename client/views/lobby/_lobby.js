@@ -4,7 +4,7 @@ Template.lobby.onCreated(function(){
 	instance.ready = new ReactiveVar(false);
 	instance.loaded = new ReactiveVar(0);
 
-	Session.set('limit', 10);
+	Session.set('limit', 15);
 
 	instance.publicMovies = new ReactiveVar();
 
@@ -14,6 +14,8 @@ Template.lobby.onCreated(function(){
 
 	instance.autorun( function(){
 		limit = Session.get('limit');
+		subscription = instance.subscribe('publicMovies', limit);
+		console.log(instance.ready.get());
 
 		if (subscription.ready() && userFavoritesSubscription.ready()){
 			instance.ready.set(true);
@@ -25,35 +27,10 @@ Template.lobby.onCreated(function(){
 	});
 })
 
-Template.lobby.onRendered(function(){
-
-	$('html, body').velocity(
-		'scroll', 300);
-
-	$(window).on('scroll', function(){
-		var threshold, target = $(".show-more-btn");
-		if (!target.length) return;
-
-		threshold = $(window).scrollTop() + $(window).height() - target.height();
-
-		if (target.offset().top < threshold) {
-		    if (!target.data("visible")) {
-		        target.data("visible", true);
-
-		        Session.set('itemCount', 0);
-			    var limit = Session.get('awardLimit')
-			    limit += 10;
-			    Session.set('limit', limit);
-		    }
-		} else {
-		    if (target.data("visible")) {
-		        target.data("visible", false);
-		    }
-		}     
-	})
-})
-
 Template.lobby.helpers({
+	isReady: function(){
+		return Template.instance().ready.get();
+	},
 	publicMovies: function(){
 		return Template.instance().publicMovies.get();
 	},

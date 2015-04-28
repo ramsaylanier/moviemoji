@@ -2,7 +2,12 @@
 	<div class="card-flipper">
 		<div class="front card-side">
 			{{#if currentUser}}
-				<button class="btn favorite-btn {{favorited}}">{{>starIcon}}</button>
+				<button class="btn favorite-btn {{favorited}}">
+					{{>starIcon}}
+					{{#if favorites}}
+						<span class="favorite-count">{{favorites.length}}</span>
+					{{/if}}
+				</button>
 			{{/if}}
 			<div class="card-content">
 				<div class="content-section">

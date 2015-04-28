@@ -1,7 +1,14 @@
 Template.movieItem.helpers({
 	createdOn: function(){
-		var date = this.createdOn;
-		return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear().toString().substr(2,4);
+		var createdDate = this.createdOn;
+		var month = createdDate.getMonth() + 1;
+		var date = createdDate.getDate();
+
+
+		month = month < 10 ? '0' + month : '' + month;
+		date = date < 10 ? '0' + date : '' + date;
+
+		return month + '/' + date + '/' + createdDate.getFullYear().toString().substr(2,4);
 	},
 	synopsis: function(){
 		var synopsis = this.synopsis;

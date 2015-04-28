@@ -131,9 +131,14 @@ a{
 }
 
 .loading-wrapper{
-	position: relative;
-	margin: 3rem;
+	position: fixed;
+	left: 50%;
+	top: 90%;
+	transform: translate3d(-50%, -50%, 0);
 	text-align: center;
+	background-color: black;
+	padding: 2rem;
+	opacity: 0;
 
 	.emoji{
 		transition: opacity 300ms ease-out;

@@ -36,7 +36,7 @@ Template.donutList.onRendered(function(){
 	    			$(node).remove();
 	    		}, options.duration + options.delay)
 		    },
-		    moveElement: function(node,next){		  
+		    moveElement: function(node,next){		
 		    	var $node = $(node), $next = $(next);
 				var oldTop = $node.offset().top;
 				var height = $node.outerHeight(true);
