@@ -14,7 +14,6 @@ Template.lobby.onCreated(function(){
 
 	instance.autorun( function(){
 		limit = Session.get('limit');
-		subscription = instance.subscribe('publicMovies', limit);
 
 		if (subscription.ready() && userFavoritesSubscription.ready()){
 			instance.ready.set(true);
@@ -27,6 +26,10 @@ Template.lobby.onCreated(function(){
 })
 
 Template.lobby.onRendered(function(){
+
+	$('html, body').velocity(
+		'scroll', 300);
+
 	$(window).on('scroll', function(){
 		var threshold, target = $(".show-more-btn");
 		if (!target.length) return;

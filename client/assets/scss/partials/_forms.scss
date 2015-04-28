@@ -8,6 +8,12 @@ form{
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	@media #{$mobile}{
+		&.tight{
+			max-width: 95%;
+		}
+	}
 }
 
 label{

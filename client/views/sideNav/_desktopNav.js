@@ -28,7 +28,7 @@ Template.desktopNav.events({
 
 		if (target.hasClass('logout-link')){
 			Meteor.logout(function(){
-				Router.go('/');
+				Router.go('/login');
 				Session.set('loggedIn', false);
 			})
 		}

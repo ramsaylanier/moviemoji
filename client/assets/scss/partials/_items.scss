@@ -48,6 +48,15 @@
 		align-items: center;
 		height: 100%;
 	}
+
+	@media #{$mobile}{
+
+		&.with-user{
+			.movie-title, .movie-author{
+			padding: 0rem 1rem 0rem 35px;
+		}
+		}
+	}
 }
 
 .movie-title{

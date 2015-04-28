@@ -2,8 +2,13 @@
 	{{#page pageOptions}}
 		<div class="wrapper">
 			<button class="btn center-btn primary-btn pink-btn modal-trigger" data-modal="newMovieForm">Create New Moviemoji</button>
-			{{> userMoviemojiList publicMovies}}
-			<button class="show-more-btn hidde-item"></button>
+
+			{{#if Template.subscriptionsReady}}	
+				{{> userMoviemojiList publicMovies}}
+				<button class="show-more-btn hidde-item"></button>
+			{{else}}
+				{{> loading}}
+			{{/if}}
 		</div>
 	{{/page}}
 </template>

@@ -68,11 +68,9 @@ Template.registerHelper('menuItems', function(){
 		menuItems = [
 			{name: 'Dashboard', url:'/dashboard'},
 			{name: 'Favorites', url:'/' + Meteor.user().username + '/favorites'},
-			{name: 'Lobby', url:'/'}
 		]
 	} else {
 		menuItems = [
-			{name: 'Lobby', url:'/'},
 			{name: 'Login', url:'/login', classes: 'login-link'}
 		]
 	}

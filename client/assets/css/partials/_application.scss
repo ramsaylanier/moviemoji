@@ -125,22 +125,3 @@ a{
 .strong{
 	font-weight: 700;
 }
-
-.loading-text{
-	color: white;
-}
-
-.loading-wrapper{
-	position: relative;
-	margin: 3rem;
-	text-align: center;
-
-	.emoji{
-		transition: opacity 300ms ease-out;
-
-		&.off-page{
-			opacity: 0;
-		}
-	}
-}
-

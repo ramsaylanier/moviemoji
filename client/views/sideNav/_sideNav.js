@@ -19,7 +19,7 @@ Template.sideNav.events({
 
 		Meteor.setTimeout(function(){
 			Meteor.logout();
-			Router.go('/');
+			Router.go('/login');
 		}, 1000);
 	}
 })

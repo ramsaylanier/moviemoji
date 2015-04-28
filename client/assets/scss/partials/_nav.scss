@@ -1,5 +1,5 @@
 .app-menu{
-	margin-top: 60px;
+	padding-top: 60px;
 }
 
 .menu-item{
@@ -20,6 +20,11 @@
 }
 
 .desktop-nav{
+
+	@media #{$mobile}{
+		display: none;
+	}
+
 	.account-toggle{
 		color: $pink;
 		float: right;

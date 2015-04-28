@@ -10,7 +10,7 @@
 	}
 
 	@media #{$mobile}{
-		padding-top: 60px;
+		padding: 55px 5px 30px 5px;
 	}
 }
 
@@ -81,6 +81,17 @@
 			background-color: white;
 			color: black;
 			outline-color: $pink;
+		}
+	}
+
+	@media #{$mobile}{
+		
+		span{
+			font-size: 2.2rem;
+		}
+
+		.movie-author{
+			font-size: 1.4rem;
 		}
 	}
 }

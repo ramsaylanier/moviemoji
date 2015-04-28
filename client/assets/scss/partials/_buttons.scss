@@ -23,6 +23,10 @@
 	border: 3px solid black;
 	background-color: white;
 	color: black;
+
+	@media #{$mobile}{
+		background: none;
+	}
 }
 
 .primary-btn{

@@ -32,6 +32,7 @@ Template.movieSingle.onCreated(function(){
 
 Template.movieSingle.onRendered(function(){
 	var instance = this;
+	$('html').velocity('scroll', {duration: 500, easing: 'easeOutQuant', delay: 200});
 	Meteor.setTimeout(function(){
 		var emojis = $('.output .emojione');
 		var emojiString = _.pluck(emojis, 'alt').join('');
