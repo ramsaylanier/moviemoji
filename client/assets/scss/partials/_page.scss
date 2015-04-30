@@ -32,7 +32,6 @@
 
 		.wrapper{
 			width: 90%;
-			max-width: 600px;
 			margin-left: auto;
 			margin-right: auto;
 
@@ -48,13 +47,21 @@
 	min-height: 80vh;
 	padding: 1rem;
 	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: center center;
 	background-color: black;
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
 	display: flex;
 	align-items: center;
+
+	@media #{$mobile}{
+		position: relative;
+		min-height: 0;
+		background-size: contain;
+		background-position: top center;
+	}
 }
 
 .page-title{
@@ -96,12 +103,16 @@
 	}
 }
 
-.page-content{
-	padding: 2rem 0rem;
-}
-
 .page-section{
 	padding: 1rem 0rem;
+
+	&.main-section{
+		padding: 3rem;
+		min-height: 80vh;
+		.wrapper{
+			max-width: 600px;
+		}
+	}
 
 	.section-heading{
 		text-transform: uppercase;

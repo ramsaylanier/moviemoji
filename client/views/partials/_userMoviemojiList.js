@@ -36,10 +36,7 @@ Template.userMoviemojiList.helpers({
 })
 
 Template.userMoviemojiList.onRendered(function(){
-	console.log('rendered');
-
-	$('html, body').velocity(
-		'scroll', 300);
+	$('html, body').velocity('scroll', {duration: 500, easing: 'easeOutQuant', delay: 200});
 
 	var scrollDebounce = false;
 

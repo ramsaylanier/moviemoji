@@ -31,8 +31,9 @@ Template.movieSingle.onCreated(function(){
 });
 
 Template.movieSingle.onRendered(function(){
+	console.log('rendered');
 	var instance = this;
-	$('html').velocity('scroll', {duration: 500, easing: 'easeOutQuant', delay: 200});
+
 	Meteor.setTimeout(function(){
 		var emojis = $('.output .emojione');
 		var emojiString = _.pluck(emojis, 'alt').join('');
@@ -64,7 +65,7 @@ Template.movieSingle.helpers({
 
 			HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + movieTitle, function(err, result){
 				if (err){
-					Errors.throw(error, 'error');
+					console.log(err);
 				} else {
 					$('.page-header').css({
 						"background-image":"url('" + result.data.data.image_url + "')"

@@ -11,12 +11,13 @@ Template.userPage.onCreated(function(){
 	var username = Router.current().params.username;
 	var limit = Session.get('limit');
 	var subscription = instance.subscribe('userMovies', username, limit);
+	var userFavoritesSubscription = instance.subscribe('userFavorites');
 
 	instance.autorun( function(){
 		limit = Session.get('limit');
 		subscription = instance.subscribe('userMovies', username);
 
-		if (subscription.ready()){
+		if (subscription.ready() && userFavoritesSubscription.ready()){
 			instance.ready.set(true);
 			instance.userMovies.set(Movies.find({authorName: username}));
 		} else {

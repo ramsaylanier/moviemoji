@@ -1,6 +1,6 @@
 .social-icon{
-	width: 25px;
-	height: 25px;
+	width: 21px;
+	height: 21px;
 
 	path{
 		fill: white;
@@ -8,10 +8,6 @@
 }
 
 .star-icon{
-	width: 25px;
-	height: 25px;
-
-	@media #{$mobile}{
-		width: 20px;
-	}
+	width: 21px;
+	height: 21px;
 }

@@ -33,7 +33,9 @@ Template.movieSynopsisForm.onRendered(function(){
     replace: function (shortname) {
     	var currentOutput = $('.output').html();
     	var input = ':'+shortname+': ';
+    	// var input = String.fromCharCode(parseInt(emojiStrategy[shortname].unicode, 16);
     	$('.output').html(currentOutput + emojione.shortnameToImage(input));
+    	// $('.output').html(currentOutput + '<span>' + emojiStrategy[shortname].unicode + '</span>');
         return input;
     },
     index: 1,
@@ -46,13 +48,17 @@ Template.movieSynopsisForm.onRendered(function(){
 
 Template.movieSynopsisForm.helpers({
 	movieImage: function(){
-		console.log(this);
 		if (this.image){
 			return this.image
 		} else {
 			var image = $('.page-header').css('background-image');
-			image = image.substr(4, image.length - 5);
-			return image;
+
+			if (image){
+				image = image.substr(4, image.length - 5);
+				return image;
+			} else {
+				return false;
+			}
 		}
 	}
 })
@@ -75,6 +81,7 @@ Template.movieSynopsisForm.events({
     	var input = $(e.target).val();
     	$(e.target).val(input.trim());
     	$('.output').html(emojione.shortnameToImage(input));
+    	// $('.output').html(input);
 	},
 	'submit form': function(e){
 		e.preventDefault();
@@ -85,6 +92,8 @@ Template.movieSynopsisForm.events({
 
 			var synopsis = $(e.target).find('[name=synopsis-field]').val();
 			var movieId = this._id; 
+
+			console.log(synopsis);
 
 			//trim synopsis to ensure that synopsis-field value contains only shortcodes
 			var trimmed = synopsis.trim().replace(/:\/?[^:]+(:)/g, "").trim();

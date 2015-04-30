@@ -85,6 +85,8 @@
 .edit-mode-btn{
 	background-color: $pink;
 	display: block;
+	height: 35px;
+	line-height: 1rem;
 }
 
 .refresh-gif-btn{
@@ -130,7 +132,6 @@
 		position: relative;
 		background-color: darken(white, 25%);
 		width: inherit;
-		padding: .4rem .75rem;
 
 		polygon{
 			fill: white;
@@ -154,7 +155,9 @@
 .social-btn{
 	display: inline-block;
 	margin-right: .5rem;
-	padding: .4rem .75rem;
+	height: 35px;
+	width: 35px;
+	padding-top: 7px;
 
 	&.tweet-btn{
 		background-color: $twitterBlue;

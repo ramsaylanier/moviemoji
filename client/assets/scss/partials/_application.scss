@@ -4,7 +4,7 @@
 
 html{
 	@media #{$mobile}{
-		font-size: 80%;
+		font-size: 90%;
 	}
 }
 
@@ -29,9 +29,7 @@ a{
 	position: absolute;
 	top: 120vh;
 	left: 50%;
-	// transform: translate3d(-50%, -50%, 0%);
 	text-align: center;
-	// backface-visibility: hidden;
 }
 
 .login-section{

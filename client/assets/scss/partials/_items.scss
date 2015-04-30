@@ -55,7 +55,7 @@
 		&.with-user{
 			.movie-title, .movie-author{
 			padding: 0rem 1rem 0rem 35px;
-		}
+			}
 		}
 	}
 }
@@ -74,8 +74,6 @@
 
 	@media #{$mobile}{
 		font-size: 1.2rem;
-		padding-left: 35px;
-		// flex: 1 100%;
 	}
 }
 
@@ -134,19 +132,12 @@
 
 .favorite-count{
 	position: absolute;
-	font-size: .6rem;
-	color: white;
-	top: 11px;
-	right: 8px;
-	background-color: $pink;
+	top: 0;
+	left: 0;
+	font-size: .9rem;
+	color: $pink;
+	background-color: white;
 	padding: 0px 3px;
-	border-radius: 2px;
-	border: 1px solid white;
-
-	@media #{$mobile}{
-		right: 1px;
-		top: 15px;
-	}
 }
 
 // .edit-form-item{

@@ -10,7 +10,7 @@ Template.favorites.onCreated(function(){
 	instance.favorites = new ReactiveVar();
 
 	var limit = Session.get('limit');
-	var username = Meteor.user().username;
+	var username = Router.current().params.username;
 	var subscription = instance.subscribe('favoriteMovies', 10, username);
 	var userFavoritesSubscription = instance.subscribe('userFavorites');
 

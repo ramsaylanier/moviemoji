@@ -15,7 +15,6 @@ Template.lobby.onCreated(function(){
 	instance.autorun( function(){
 		limit = Session.get('limit');
 		subscription = instance.subscribe('publicMovies', limit);
-		console.log(instance.ready.get());
 
 		if (subscription.ready() && userFavoritesSubscription.ready()){
 			instance.ready.set(true);

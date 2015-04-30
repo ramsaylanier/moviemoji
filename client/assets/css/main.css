@@ -301,7 +301,7 @@ p + .typl8-drop-cap {
 
 @media only screen and (max-width: 568px) {
   html {
-    font-size: 80%; } }
+    font-size: 90%; } }
 
 body {
   font-family: "ff-tisa-sans-web-pro", sans-serif;
@@ -436,7 +436,6 @@ a {
     height: 100%; }
     .movie-page .page-content .wrapper {
       width: 90%;
-      max-width: 600px;
       margin-left: auto;
       margin-right: auto; }
       @media only screen and (max-width: 568px) {
@@ -448,9 +447,10 @@ a {
   min-height: 80vh;
   padding: 1rem;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
   background-color: black;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   display: -webkit-box;
@@ -461,6 +461,12 @@ a {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media only screen and (max-width: 568px) {
+    .page-header {
+      position: relative;
+      min-height: 0;
+      background-size: contain;
+      background-position: top center; } }
 
 .page-title {
   text-align: center;
@@ -487,11 +493,13 @@ a {
     .page-title .movie-author {
       font-size: 1.4rem; } }
 
-.page-content {
-  padding: 2rem 0rem; }
-
 .page-section {
   padding: 1rem 0rem; }
+  .page-section.main-section {
+    padding: 3rem;
+    min-height: 80vh; }
+    .page-section.main-section .wrapper {
+      max-width: 600px; }
   .page-section .section-heading {
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -722,7 +730,9 @@ a {
 
 .edit-mode-btn {
   background-color: #f42045;
-  display: block; }
+  display: block;
+  height: 35px;
+  line-height: 1rem; }
 
 .refresh-gif-btn {
   background-color: #f42045;
@@ -753,8 +763,7 @@ a {
   .favorite-btn.social-btn {
     position: relative;
     background-color: #bfbfbf;
-    width: inherit;
-    padding: .4rem .75rem; }
+    width: inherit; }
     .favorite-btn.social-btn polygon {
       fill: white; }
     .favorite-btn.social-btn:hover polygon {
@@ -767,7 +776,9 @@ a {
 .social-btn {
   display: inline-block;
   margin-right: .5rem;
-  padding: .4rem .75rem; }
+  height: 35px;
+  width: 35px;
+  padding-top: 7px; }
   .social-btn.tweet-btn {
     background-color: #55acee; }
   .social-btn.facebook-btn {
@@ -820,7 +831,7 @@ label {
     outline: none; }
 
 .synopsis-form {
-  margin-bottom: 2rem;
+  margin-top: 1rem;
   padding: 1rem;
   background-color: white; }
   .synopsis-form .form-control {
@@ -865,9 +876,6 @@ label {
         border-bottom: 0;
         border-right: 1px solid #e6e6e6;
         border-bottom: 1px solid #e6e6e6; } }
-
-.dashboard-page .favorite-btn {
-  display: none; }
 
 .dashboard-block {
   margin-top: 2rem; }
@@ -946,8 +954,7 @@ label {
           transition: padding 100ms ease-out; }
   @media only screen and (max-width: 568px) {
     .movie-title {
-      font-size: 1.2rem;
-      padding-left: 35px; } }
+      font-size: 1.2rem; } }
 
 .movie-author {
   font-size: .8rem;
@@ -1001,31 +1008,22 @@ label {
 
 .favorite-count {
   position: absolute;
-  font-size: .6rem;
-  color: white;
-  top: 11px;
-  right: 8px;
-  background-color: #f42045;
-  padding: 0px 3px;
-  border-radius: 2px;
-  border: 1px solid white; }
-  @media only screen and (max-width: 568px) {
-    .favorite-count {
-      right: 1px;
-      top: 15px; } }
+  top: 0;
+  left: 0;
+  font-size: .9rem;
+  color: #f42045;
+  background-color: white;
+  padding: 0px 3px; }
 
 .social-icon {
-  width: 25px;
-  height: 25px; }
+  width: 21px;
+  height: 21px; }
   .social-icon path {
     fill: white; }
 
 .star-icon {
-  width: 25px;
-  height: 25px; }
-  @media only screen and (max-width: 568px) {
-    .star-icon {
-      width: 20px; } }
+  width: 21px;
+  height: 21px; }
 
 .errors {
   z-index: 999; }
