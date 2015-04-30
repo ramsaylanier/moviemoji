@@ -45,11 +45,13 @@ Template.userMoviemojiList.onRendered(function(){
 
 	$(window).on('scroll', function(){
 		var threshold, target = $(".show-more-btn");
-		if (!target.length || scrollDebounce == true) return;
+		if (!target.length || scrollDebounce) return;
 
 		threshold = $(window).scrollTop() + $(window).height() + 100;
 
-		if (target.offset().top < threshold) {
+		var editMode = Session.get('editMode');
+
+		if (target.offset().top < threshold && !editMode) {
 		    if (!target.data("visible")) {
 
 				scrollDebounce = true;

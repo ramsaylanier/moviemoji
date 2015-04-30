@@ -44,6 +44,10 @@ Template.movieSingle.onRendered(function(){
 	}, 1500);
 });
 
+Template.movieSingle.onDestroyed(function(){
+	Session.set('editMode', false);
+})
+
 Template.movieSingle.helpers({
 	movieSingle: function(){
 		return Movies.findOne(Router.current().params._id);

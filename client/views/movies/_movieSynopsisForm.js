@@ -86,9 +86,9 @@ Template.movieSynopsisForm.events({
 			var synopsis = $(e.target).find('[name=synopsis-field]').val();
 			var movieId = this._id; 
 
+			//trim synopsis to ensure that synopsis-field value contains only shortcodes
 			var trimmed = synopsis.trim().replace(/:\/?[^:]+(:)/g, "").trim();
 			var outputText = $('.output').text().trim();
-
 
 			if (trimmed.length > 0 || outputText.length > 0){
 				Errors.throw('Your synopsis has non-emoji in it. Tighten up!', 'error');
@@ -106,7 +106,7 @@ Template.movieSynopsisForm.events({
 					} else {
 
 						//reset output to synopsis to prevent double emojis
-						$('.output').html(emojione.shortnameToImage(movie.synopsis));
+						$('.output').html(emojione.shortnameToImage(synopsis));
 						Session.set('editMode', false);
 						Errors.throw('Saved!', 'success');
 					}

@@ -851,6 +851,20 @@ label {
       .dropdown-menu li a img {
         height: 100%;
         margin: 0; }
+  @media only screen and (max-width: 568px) {
+    .dropdown-menu {
+      left: 0 !important;
+      width: 100%;
+      bottom: 10px !important;
+      top: initial !important;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: .5rem; }
+      .dropdown-menu li {
+        display: inline-block;
+        border-bottom: 0;
+        border-right: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6; } }
 
 .dashboard-page .favorite-btn {
   display: none; }
@@ -914,8 +928,10 @@ label {
             align-items: center;
     height: 100%; }
   @media only screen and (max-width: 568px) {
-    .movie-item.with-user .movie-title, .movie-item.with-user .movie-author {
-      padding: 0rem 1rem 0rem 35px; } }
+    .movie-item {
+      height: 50px; }
+      .movie-item.with-user .movie-title, .movie-item.with-user .movie-author {
+        padding: 0rem 1rem 0rem 35px; } }
 
 .movie-title {
   font-family: "nimbus-sans-condensed", sans-serif;
@@ -987,12 +1003,16 @@ label {
   position: absolute;
   font-size: .6rem;
   color: white;
-  top: 10px;
-  right: 10px;
+  top: 11px;
+  right: 8px;
   background-color: #f42045;
   padding: 0px 3px;
   border-radius: 2px;
   border: 1px solid white; }
+  @media only screen and (max-width: 568px) {
+    .favorite-count {
+      right: 1px;
+      top: 15px; } }
 
 .social-icon {
   width: 25px;

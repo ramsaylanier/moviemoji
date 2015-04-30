@@ -19,4 +19,21 @@
 			}
 		}
 	}
+
+	@media #{$mobile}{
+		left: 0 !important;
+		width: 100%;
+		bottom: 10px !important;
+		top: initial !important;
+		overflow-x: auto;
+		white-space: nowrap;
+		padding-bottom: .5rem;
+
+		li{
+			display: inline-block;
+			border-bottom: 0;
+			border-right: 1px solid darken(white, 10%);
+			border-bottom: 1px solid darken(white, 10%);
+		}
+	}
 }
