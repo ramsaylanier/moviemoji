@@ -1,7 +1,7 @@
 App.info({
   name: 'Moviemoji',
   description: 'Movie synopses with pure emoji.',
-  version: '0.0.1'
+  version: '0.0.3'
 });
 
 App.icons({
@@ -14,3 +14,5 @@ App.icons({
 App.accessRule('*.jsdelivr.net');
 App.accessRule('http://cdn.jsdelivr.net');
 App.accessRule('http://s3.amazonaws.com');
+App.accessRule('*.typekit.net');
+App.accessRule('http://*.typekit.net');
