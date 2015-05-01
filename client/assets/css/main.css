@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@import url('//hello.myfonts.net/count/2c7b8f');
+/* GLYPHS */
+@font-face {
+  font-family: 'NimbusSans';
+  src: url('/fonts/nimbus-sans-bold-webfont.eot');
+  src: url('/fonts/nimbus-sans-bold-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/nimbus-sans-bold-webfont.woff2') format('woff2'), url('/fonts/nimbus-sans-bold-webfont.woff') format('woff'), url('/fonts/nimbus-sans-bold-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'NimbusSansLight';
+  src: url('/fonts/nimbus-sans-light-webfont.eot');
+  src: url('/fonts/nimbus-sans-light-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/nimbus-sans-light-webfont.woff') format('woff'), url('/fonts/nimbus-sans-light-webfont.woff2') format('woff2'), url('/fonts/nimbus-sans-light-webfont.ttf') format('truetype'); }
+
 /** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -72,7 +84,7 @@ body {
   color: #444; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "nimbus-sans-condensed", sans-serif; }
+  font-family: "NimbusSans", sans-serif; }
 
 .typl8-tera {
   font-size: 117px;
@@ -304,7 +316,7 @@ p + .typl8-drop-cap {
     font-size: 90%; } }
 
 body {
-  font-family: "ff-tisa-sans-web-pro", sans-serif;
+  font-family: "NimbusSansLight", sans-serif;
   background-color: black; }
 
 a {
@@ -377,6 +389,9 @@ a {
 
 .modal-content {
   padding: 1rem; }
+  @media only screen and (max-width: 568px) {
+    .modal-content {
+      width: 90%; } }
 
 .mobile-only {
   display: none; }
@@ -451,7 +466,7 @@ a {
   background-position: center center;
   background-color: black;
   position: absolute;
-  top: 0;
+  top: 35px;
   left: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -463,8 +478,7 @@ a {
           align-items: center; }
   @media only screen and (max-width: 568px) {
     .page-header {
-      position: relative;
-      min-height: 0;
+      top: 40px;
       background-size: contain;
       background-position: top center; } }
 
@@ -500,6 +514,10 @@ a {
     min-height: 80vh; }
     .page-section.main-section .wrapper {
       max-width: 600px; }
+    @media only screen and (max-width: 568px) {
+      .page-section.main-section {
+        padding: 3rem 1rem;
+        min-height: 30vh; } }
   .page-section .section-heading {
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -547,7 +565,8 @@ a {
   background-color: white;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  background-color: white; }
+  background-color: white;
+  height: 35px; }
   @media only screen and (max-width: 568px) {
     .header {
       height: 40px; } }
@@ -558,7 +577,7 @@ a {
 
 .logo {
   position: relative;
-  height: 40px;
+  height: 35px;
   float: left; }
   .logo.mobile-only {
     height: 30px;
@@ -612,7 +631,8 @@ a {
     color: white;
     display: block;
     padding: .5rem;
-    margin-bottom: 3px; }
+    margin-bottom: 3px;
+    font-weight: 900; }
   .menu-item.menu-item__logout a {
     background-color: #f42045; }
 
@@ -661,7 +681,7 @@ a {
   color: white;
   cursor: pointer;
   border-radius: 1px;
-  font-family: "nimbus-sans-condensed", sans-serif;
+  font-family: "NimbusSans", sans-serif;
   padding: .25rem .5rem; }
 
 .account-btn {
@@ -669,7 +689,7 @@ a {
   text-transform: uppercase;
   color: white;
   font-size: 2rem;
-  font-family: "nimbus-sans-condensed", sans-serif;
+  font-family: "NimbusSans", sans-serif;
   font-weight: 700;
   letter-spacing: 1px; }
 
@@ -818,7 +838,7 @@ label {
   color: white;
   padding: .5rem .5rem .25rem .5rem;
   width: 100%;
-  font-family: "ff-tisa-sans-web-pro", sans-serif; }
+  font-family: "NimbusSansLight", sans-serif; }
   .field::-webkit-input-placeholder {
     color: white; }
   .field::-moz-placeholder {
@@ -858,7 +878,7 @@ label {
     .dropdown-menu li a {
       display: block;
       height: 100%;
-      font-family: "ff-tisa-sans-web-pro", sans-serif; }
+      font-family: "NimbusSansLight", sans-serif; }
       .dropdown-menu li a img {
         height: 100%;
         margin: 0; }
@@ -942,7 +962,7 @@ label {
         padding: 0rem 1rem 0rem 35px; } }
 
 .movie-title {
-  font-family: "nimbus-sans-condensed", sans-serif;
+  font-family: "NimbusSans", sans-serif;
   font-size: 1.6rem;
   font-weight: 100;
   margin: 0;
@@ -986,7 +1006,7 @@ label {
   font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: 700;
-  font-family: "nimbus-sans-condensed", sans-serif;
+  font-family: "NimbusSans", sans-serif;
   margin: 0;
   padding: 1rem;
   border-left: 2px solid #f42045;

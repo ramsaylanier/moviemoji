@@ -26,5 +26,5 @@ App.launchScreens({
 App.accessRule('*.jsdelivr.net');
 App.accessRule('http://cdn.jsdelivr.net');
 App.accessRule('http://s3.amazonaws.com');
-App.accessRule('*.typekit.net');
-App.accessRule('http://*.typekit.net');
+App.accessRule('*.giphy.com');
+App.accessRule('http://api.giphy.com');

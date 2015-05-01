@@ -51,14 +51,13 @@
 	background-position: center center;
 	background-color: black;
 	position: absolute;
-	top: 0;
+	top: 35px;
 	left: 0;
 	display: flex;
 	align-items: center;
 
 	@media #{$mobile}{
-		position: relative;
-		min-height: 0;
+		top: 40px;
 		background-size: contain;
 		background-position: top center;
 	}
@@ -111,6 +110,11 @@
 		min-height: 80vh;
 		.wrapper{
 			max-width: 600px;
+		}
+
+		@media #{$mobile}{
+			padding: 3rem 1rem;
+			min-height: 30vh;
 		}
 	}
 

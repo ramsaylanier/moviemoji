@@ -107,6 +107,10 @@ a{
 
 .modal-content{
 	padding: 1rem;
+
+	@media #{$mobile}{
+		width: 90%;
+	}
 }
 
 .mobile-only{

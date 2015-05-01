@@ -26,13 +26,13 @@ Template.donutList.onRendered(function(){
 
 		    	$(node).insertBefore(next);
 
-		    	Meteor.setTimeout(function(){
+		    	setTimeout(function(){
 		    		donutAnimation.animate($(node), data.itemAnimateIn, options);
 		    	}, options.delay * itemCount);
 		    },
 		    removeElement: function(node, next){
 	    		donutAnimation.animate($(node), data.itemAnimateOut, options);
-	    		Meteor.setTimeout(function(){
+	    		setTimeout(function(){
 	    			$(node).remove();
 	    		}, options.duration + options.delay)
 		    },
