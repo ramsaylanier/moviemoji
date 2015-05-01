@@ -1,7 +1,7 @@
 App.info({
   name: 'Moviemoji',
   description: 'Movie synopses with pure emoji.',
-  version: '0.0.3'
+  version: '0.1.0'
 });
 
 App.icons({
@@ -13,14 +13,14 @@ App.icons({
 
 
 App.launchScreens({
-	'android_ldpi_portrait' : 	'public/favicon/android-splash.png',
-	'android_ldpi_landscape' : 	'public/favicon/android-splash.png',
-	'android_mdpi_portrait' :  	'public/favicon/android-splash.png',
-	'android_mdpi_landscape' :  'public/favicon/android-splash.png',
-	'android_hdpi_portrait' :  	'public/favicon/android-splash.png',
-	'android_hdpi_landscape' :  'public/favicon/android-splash.png',
-	'android_xhdpi_portrait' :  'public/favicon/android-splash.png',
-	'android_xhdpi_landscape' : 'public/favicon/android-splash.png'
+	'android_ldpi_portrait' : 	'public/favicon/android-splash-200-320.9.png',
+	'android_ldpi_landscape' : 	'public/favicon/android-splash-320-200.9.png',
+	'android_mdpi_portrait' :  	'public/favicon/android-splash-320-480.9.png',
+	'android_mdpi_landscape' :  'public/favicon/android-splash-480-320.9.png',
+	'android_hdpi_portrait' :  	'public/favicon/android-splash-480-800.9.png',
+	'android_hdpi_landscape' :  'public/favicon/android-splash-800-480.9.png',
+	'android_xhdpi_portrait' :  'public/favicon/android-splash-720-1280.9.png',
+	'android_xhdpi_landscape' : 'public/favicon/android-splash-1280-720.9.png'
 })
 
 App.accessRule('*.jsdelivr.net');
