@@ -423,6 +423,9 @@ a {
   background-color: black;
   padding: 2rem;
   opacity: 0; }
+  @media only screen and (max-width: 568px) {
+    .loading-wrapper {
+      width: 100%; } }
   .loading-wrapper .emoji {
     -webkit-transition: opacity 300ms ease-out;
             transition: opacity 300ms ease-out; }
@@ -646,6 +649,9 @@ a {
   padding: .5rem;
   float: right;
   margin-left: 5px; }
+
+.giphy-logo {
+  max-height: 35px; }
 
 .app-menu {
   padding-top: 60px; }
