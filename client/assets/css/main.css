@@ -333,6 +333,11 @@ a {
   top: 120vh;
   left: 50%;
   text-align: center; }
+  .login-item .legal-link {
+    color: #f42045;
+    font-size: .8rem; }
+    .login-item .legal-link:first-of-type {
+      margin-right: 10px; }
 
 .login-section {
   width: 200px;
@@ -429,6 +434,7 @@ a {
   opacity: 0;
   min-height: 100vh;
   padding-top: 90px;
+  padding-bottom: 50px;
   overflow: hidden; }
   .page.with-header {
     padding-top: 40px; }
@@ -554,6 +560,12 @@ a {
       -ms-flex-pack: center;
           justify-content: center; }
 
+.about-content {
+  background-color: white;
+  padding: 1rem; }
+  .about-content a {
+    color: #f42045; }
+
 .header {
   -webkit-transform-origin: top center;
       -ms-transform-origin: top center;
@@ -620,6 +632,20 @@ a {
 
 .menu-toggle.left-toggle {
   left: 20px; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: .5rem; }
+
+.footer-link {
+  color: white;
+  padding: .5rem;
+  float: right;
+  margin-left: 5px; }
 
 .app-menu {
   padding-top: 60px; }
@@ -1051,7 +1077,7 @@ label {
 .modal {
   z-index: 900; }
 
-.header {
+.header, .footer {
   z-index: 900; }
 
 .loading-wrapper {

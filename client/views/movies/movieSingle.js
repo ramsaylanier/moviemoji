@@ -40,7 +40,7 @@ Template.movieSingle.onRendered(function(){
 		var message = instance.movie.title + ': ' + emojiString;
 		var tweetURL = encodeURI(window.location.href);
 
-		var tweetString = "https://twitter.com/intent/tweet?text=" + message + "&hashtags=Moviemoji&via=moviemojiapp&url=" + tweetURL;
+		var tweetString = "https://twitter.com/intent/tweet?text=" + message + "&hashtags=Moviemoji&via=moviemojiapp&url=http://moviemoji.com/movies/" + instance.movie._id;
 		$('.tweet-btn').attr('href', tweetString);
 	}, 1500);
 });

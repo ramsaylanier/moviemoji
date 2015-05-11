@@ -40,11 +40,10 @@
 
 <template name="layout">
 	<div class="application">
+		{{> errors}}
 		{{> header}}
 		{{> yield}}
-
 		{{> sideNav}}
-
-		{{> errors}}
+		{{> footer}}
 	</div>
 </template>

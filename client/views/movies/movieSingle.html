@@ -26,9 +26,11 @@
 								{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}					
 									<a href="#" target="_blank" class="social-btn facebook-btn">{{>facebookIcon}}</a>
 								{{/donutItem}}
-								{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}					
-									<button class="btn social-btn favorite-btn {{favorited}}">{{>starIcon}}</button>
-								{{/donutItem}}
+								{{#if currentUser}}
+									{{#donutItem animateIn='slideInFromBottom_Short' duration=1000 delay=800 classes='hidden-item inline-item'}}					
+										<button class="btn social-btn favorite-btn {{favorited}}">{{>starIcon}}</button>
+									{{/donutItem}}
+								{{/if}}
 
 							
 								{{#if isAuthor}}

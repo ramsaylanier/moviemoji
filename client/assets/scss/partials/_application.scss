@@ -30,6 +30,14 @@ a{
 	top: 120vh;
 	left: 50%;
 	text-align: center;
+
+	.legal-link{
+		color: $pink;
+		font-size: .8rem;
+		&:first-of-type{
+			margin-right: 10px;
+		}
+	}
 }
 
 .login-section{
@@ -141,6 +149,10 @@ a{
 	background-color: black;
 	padding: 2rem;
 	opacity: 0;
+
+	@media #{$mobile}{
+		width: 100%;
+	}
 
 	.emoji{
 		transition: opacity 300ms ease-out;
