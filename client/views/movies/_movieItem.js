@@ -10,18 +10,6 @@ Template.movieItem.helpers({
 
 		return month + '/' + date + '/' + createdDate.getFullYear().toString().substr(2,4);
 	},
-	synopsis: function(){
-		var synopsis = this.synopsis;
-
-		if (this.published){
-			var cleaned = synopsis.match(/(:)\w+(:)/g).slice(0,10);
-			var converted = emojione.shortnameToImage(cleaned.join(''));
-			var ellipses = (cleaned.length >= 10) ? '...':''
-			return converted + ellipses;
-		} else {
-			return synopsis;
-		}
-	},
 	notDashboard: function(){
 		if (window.location.pathname === '/dashboard'){
 			return false;

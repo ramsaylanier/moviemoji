@@ -31,7 +31,6 @@ Template.movieSingle.onCreated(function(){
 });
 
 Template.movieSingle.onRendered(function(){
-	console.log('rendered');
 	var instance = this;
 
 	Meteor.setTimeout(function(){
@@ -76,18 +75,6 @@ Template.movieSingle.helpers({
 					return result.data.data.image_url;
 				}
 			})
-
-			// HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=' + apiKey + '=&tag=' + movieTitle, function(err, result){
-			// 	if (err){
-			// 		console.log(err);
-			// 	} else {
-			// 		$('.page-header').css({
-			// 			"background-image":"url('" + result.data.data.image_url + "')"
-			// 		});
-			// 		$('.gif-field').val(result.data.data.image_url);
-			// 		return result.data.data.image_url;
-			// 	}
-			// });
 		}
 
 	},
@@ -163,13 +150,6 @@ Template.movieSingle.helpers({
 	isAuthor: function(){
 		if (Meteor.userId() === this.author){
 			return true;
-		}
-	},
-	synopsis: function(){
-		if (this.synopsis){
-			return emojione.shortnameToImage(this.synopsis);
-		} else{
-			return false;
 		}
 	},
 	editMode: function(){
