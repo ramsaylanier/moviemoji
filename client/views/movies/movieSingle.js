@@ -30,14 +30,26 @@ Template.movieSingle.onCreated(function(){
 	}
 });
 
+// Template.movieSingle.onRendered(function(){
+// 	var instance = this;
+
+// 	Meteor.setTimeout(function(){
+// 		var emojis = $('.output .emojione');
+// 		var emojiString = _.pluck(emojis, 'alt').join('');
+// 		var message = instance.movie.title + ': ' + emojiString;
+// 		var tweetURL = encodeURI(window.location.href);
+
+// 		var tweetString = "https://twitter.com/intent/tweet?text=" + message + "&hashtags=Moviemoji&via=moviemojiapp&url=http://moviemoji.com/movies/" + instance.movie._id;
+// 		$('.tweet-btn').attr('href', tweetString);
+// 	}, 1500);
+// });
+
 Template.movieSingle.onRendered(function(){
 	var instance = this;
 
 	Meteor.setTimeout(function(){
-		var emojis = $('.output .emojione');
-		var emojiString = _.pluck(emojis, 'alt').join('');
-		var message = instance.movie.title + ': ' + emojiString;
-		var tweetURL = encodeURI(window.location.href);
+		var emojis = $('.main-section .output').text();
+		var message = instance.movie.title + ': ' + emojis;
 
 		var tweetString = "https://twitter.com/intent/tweet?text=" + message + "&hashtags=Moviemoji&via=moviemojiapp&url=http://moviemoji.com/movies/" + instance.movie._id;
 		$('.tweet-btn').attr('href', tweetString);
