@@ -14,5 +14,8 @@
 	"facebook": {
 		"appId":"880094882064053",
 		"appSecret":"b1bd337cad5fabf74abacff010f9e623"
+	},
+	"giphy": {
+		"apikey": "xTiTnDSDijvoFfeLuw"
 	}
 }

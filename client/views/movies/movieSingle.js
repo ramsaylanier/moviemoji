@@ -62,18 +62,32 @@ Template.movieSingle.helpers({
 			return image;
 		} else {
 			var movieTitle = encodeURI(instance.movie.title);
+			// var apiKey = Meteor.settings.public.giphy.apikey;
 
-			HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + movieTitle, function(err, result){
-				if (err){
-					console.log(err);
+			Meteor.call('getAnimatedGif', movieTitle, function(error, result){
+				if (error){
+					console.log(error)
 				} else {
+					console.log(result);
 					$('.page-header').css({
 						"background-image":"url('" + result.data.data.image_url + "')"
 					});
 					$('.gif-field').val(result.data.data.image_url);
 					return result.data.data.image_url;
 				}
-			});
+			})
+
+			// HTTP.get('http://api.giphy.com/v1/gifs/random?api_key=' + apiKey + '=&tag=' + movieTitle, function(err, result){
+			// 	if (err){
+			// 		console.log(err);
+			// 	} else {
+			// 		$('.page-header').css({
+			// 			"background-image":"url('" + result.data.data.image_url + "')"
+			// 		});
+			// 		$('.gif-field').val(result.data.data.image_url);
+			// 		return result.data.data.image_url;
+			// 	}
+			// });
 		}
 
 	},
