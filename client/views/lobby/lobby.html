@@ -1,7 +1,11 @@
 <template name="lobby">
 	{{#page pageOptions}}
 		<div class="wrapper">
-			<button class="btn center-btn primary-btn pink-btn modal-trigger" data-modal="newMovieForm">Create New Moviemoji</button>
+			{{#if currentUser}}
+				<button class="btn center-btn primary-btn pink-btn modal-trigger" data-modal="newMovieForm">Create New Moviemoji</button>
+			{{else}}
+				<a href="/login" class="btn center-btn primary-btn pink-btn transition-link">Login To Create Moviemoji</a>
+			{{/if}}
 
 			{{#unless isReady}}	
 				{{> loading}}
